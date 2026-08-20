@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Marginal ACoS: The Metric Your Agency Isn&#x27;t Reporting | Dr. PPC</title>
+<meta name="description" content="Blended ACoS tells you what the account did. Marginal ACoS tells you what your last decision did. The definition, the calculation, and the $588 spend change that recovered $8,400 of weekly revenue." />
+<link rel="canonical" href="https://drppc.ai/learn/acos/marginal-acos/" />
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Marginal ACoS: The Metric Your Agency Isn&#x27;t Reporting" />
+<meta property="og:description" content="Blended ACoS tells you what the account did. Marginal ACoS tells you what your last decision did. The definition, the calculation, and the $588 spend change that recovered $8,400 of weekly revenue." />
+<meta property="og:url" content="https://drppc.ai/learn/acos/marginal-acos/" />
+<meta property="article:modified_time" content="2026-08-19" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --base:#08060f; --raised:#0e0b1a; --fg:#f4f4f6; --dim:#9a97a8; --line:#221e33;
+  --accent:#00ff9d; --amber:#f59e0b;
+  --display:'Archivo',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--base);color:var(--fg);font-family:var(--body);
+  line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+a{color:var(--accent)}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.02em;line-height:1.12;margin:0}
+h1{font-size:clamp(30px,4.6vw,46px);font-weight:800;margin:14px 0 0}
+h2{font-size:clamp(21px,2.6vw,28px);font-weight:700;margin:46px 0 12px}
+h3{font-size:18px;font-weight:700;margin:28px 0 8px}
+p{margin:0 0 1.05em}
+.kicker{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.dim{color:var(--dim)}
+nav.top{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);
+  background:rgba(8,6,15,.9);backdrop-filter:blur(10px)}
+nav.top .bar{max-width:1080px;margin:0 auto;padding:13px 22px;display:flex;gap:20px;
+  align-items:center;justify-content:space-between;flex-wrap:wrap}
+.logo{font-family:var(--display);font-weight:800;font-size:17px;text-decoration:none;color:var(--fg)}
+.logo span{color:var(--accent)}
+nav.top ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav.top ul a{font-family:var(--mono);font-size:12px;color:var(--dim);text-decoration:none;
+  letter-spacing:.04em;text-transform:uppercase}
+nav.top ul a:hover{color:var(--accent)}
+.navcta{font-family:var(--mono);font-size:12px;font-weight:700;background:var(--accent);
+  color:var(--base);padding:8px 14px;border-radius:7px;text-decoration:none}
+.crumbs{font-family:var(--mono);font-size:11.5px;color:#6d6a7c;padding:22px 0 0;
+  display:flex;flex-wrap:wrap;gap:7px}
+.crumbs a{color:#6d6a7c;text-decoration:none}
+.crumbs a:hover{color:var(--accent)}
+article{padding:0 0 60px}
+.meta{font-family:var(--mono);font-size:11.5px;color:#6d6a7c;margin:16px 0 30px;
+  padding-bottom:18px;border-bottom:1px solid var(--line)}
+.answer{border-left:3px solid var(--accent);background:rgba(0,255,157,.05);
+  padding:20px 22px;border-radius:0 11px 11px 0;margin:0 0 30px;font-size:18px}
+.answer .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);display:block;margin-bottom:9px}
+.answer p{margin:0}
+.receipts{display:grid;gap:13px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin:26px 0}
+.rec{border:1px solid var(--line);border-radius:12px;padding:20px;background:var(--raised)}
+.rec .big{font-family:var(--display);font-size:28px;font-weight:800;color:var(--accent);
+  letter-spacing:-.03em;line-height:1.1}
+.rec .lbl{font-family:var(--mono);font-size:11.5px;color:var(--dim);margin-top:9px;line-height:1.55}
+.rec .who{font-family:var(--mono);font-size:10.5px;color:#6d6a7c;margin-top:8px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;
+  background:var(--raised);margin:24px 0}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{padding:13px 15px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--dim);font-weight:500}
+tbody tr:last-child td{border-bottom:none}
+td:first-child{color:var(--dim);font-family:var(--mono);font-size:12.5px}
+caption{caption-side:top;text-align:left;padding:14px 15px 0;font-family:var(--mono);
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+ul.body,ol.body{margin:0 0 1.2em;padding-left:22px}
+ul.body li,ol.body li{margin-bottom:.5em}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0 0 1.4em}
+.steps li{counter-increment:s;position:relative;padding:0 0 14px 40px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px;height:26px;
+  border-radius:7px;background:rgba(0,255,157,.1);border:1px solid rgba(0,255,157,.3);
+  color:var(--accent);font-family:var(--mono);font-size:12px;font-weight:700;
+  display:flex;align-items:center;justify-content:center}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none;
+  display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:19px}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--dim);font-size:15.4px;margin:12px 0 0}
+.takeaway{border:1px solid rgba(0,255,157,.3);border-radius:13px;padding:24px;
+  background:linear-gradient(180deg,rgba(0,255,157,.05),rgba(14,11,26,.9));margin:34px 0}
+.takeaway .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);display:block;margin-bottom:9px}
+.cta{border:1px solid var(--line);border-radius:13px;padding:26px;background:var(--raised);margin:34px 0}
+.cta p{color:var(--dim);font-size:15px}
+.btn{display:inline-block;background:var(--accent);color:var(--base);font-weight:800;
+  font-size:15.5px;padding:13px 26px;border-radius:9px;text-decoration:none;margin-top:6px}
+.links{border-top:1px solid var(--line);margin-top:44px;padding-top:28px}
+.links h2{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--dim);font-weight:500;margin:0 0 14px}
+.links ul{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:9px}
+.links li a{font-size:15.5px;text-decoration:none}
+.links li a:hover{text-decoration:underline}
+.links li span{display:block;font-family:var(--mono);font-size:11px;color:#6d6a7c;margin-top:2px}
+.spokegrid{display:grid;gap:11px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  list-style:none;padding:0;margin:0}
+.spokegrid li{border:1px solid var(--line);border-radius:11px;padding:15px 17px;background:var(--raised)}
+.sourcenote{font-family:var(--mono);font-size:11px;color:#6d6a7c;line-height:1.7;
+  border-top:1px solid var(--line);margin-top:34px;padding-top:20px}
+footer{border-top:1px solid var(--line);padding:34px 0 60px}
+footer .fine{font-family:var(--mono);font-size:11px;color:#6d6a7c;max-width:62ch;line-height:1.8}
+@media(max-width:640px){.answer{font-size:16.5px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Marginal ACoS: The Metric Your Agency Isn't Reporting",
+  "description": "Blended ACoS tells you what the account did. Marginal ACoS tells you what your last decision did. The definition, the calculation, and the $588 spend change that recovered $8,400 of weekly revenue.",
+  "datePublished": "2026-08-19",
+  "dateModified": "2026-08-19",
+  "wordCount": 896,
+  "inLanguage": "en-US",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://drppc.ai/learn/acos/marginal-acos/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Dr. PPC (Orbit)",
+    "url": "https://drppc.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dr. PPC (Orbit)",
+    "url": "https://drppc.ai"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "marginal acos"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drppc.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "What Is ACoS? The Complete Amazon ACoS Guide",
+      "item": "https://drppc.ai/learn/acos/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Marginal ACoS: The Metric Your Agency Isn't Reporting",
+      "item": "https://drppc.ai/learn/acos/marginal-acos/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is marginal ACoS the same as incremental ACoS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "People use the terms interchangeably. Both mean cost of sale on the change rather than on the total. We prefer marginal because incremental is already overloaded by the incrementality debate, which is a separate and larger argument about whether ads create demand at all."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What period should I compare?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Week over week for tactical changes and four-to-eight weeks for structural ones. Never seven days for a structural change — Amazon settles fees late and attributed sales keep moving, so a short window will show you noise and call it a result."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn't any tool report this by default?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because it requires knowing which change you made and when, and most reporting is built on account state rather than on a decision log. If your system cannot tell you what changed and why, it cannot compute marginal anything."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Marginal ACoS: The Metric Your Agency Isn't Reporting",
+  "description": "Marginal ACoS is the advertising cost of sale on a change in spend, not on total spend. Divide the added spend by the revenue that added spend produced. It is the only ACoS figure that tells you whether your last decision was correct, and almost nobody reports it.",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "Dr. PPC Amazon Advertising Glossary",
+    "url": "https://drppc.ai/glossary/"
+  }
+}
+</script>
+</head>
+<body>
+<nav class="top"><div class="bar">
+  <a class="logo" href="/">Dr.<span>PPC</span></a>
+  <ul><li><a href="/learn/acos/">ACoS</a></li><li><a href="/vs/">Compare</a></li><li><a href="/learn/ppc/">Playbook</a></li><li><a href="/statistics/">Statistics</a></li><li><a href="/answers/">Answers</a></li></ul>
+  <a class="navcta" href="/#demo">Start free for 30 days</a>
+</div></nav>
+
+<div class="wrap">
+  <div class="crumbs"><a href="/">Home</a> › <a href="/learn/acos/">What Is ACoS? The Complete Amazon ACoS Guide</a> › <span>Marginal ACoS: The Metric Your Agency Isn&#x27;t Reporting</span></div>
+  <article>
+    <span class="kicker">Definition</span>
+    <h1>Marginal ACoS: The Metric Your Agency Isn&#x27;t Reporting</h1>
+    <div class="meta">Updated 2026-08-19 · 896 words ·
+      Written from 3 first-party data point(s) in our source bank</div>
+
+    <div class="answer"><span class="lbl">The short answer</span><p>Marginal ACoS is the advertising cost of sale on a change in spend, not on total spend. Divide the added spend by the revenue that added spend produced. It is the only ACoS figure that tells you whether your last decision was correct, and almost nobody reports it.</p></div>
+
+    <div class="receipts"><div class="rec"><div class="big">7.01%</div><div class="lbl">Marginal ACoS on a $588 spend restoration that recovered roughly $8,400 of weekly revenue</div><div class="who">an 8-figure sports nutrition brand · SLK-W2</div></div><div class="rec"><div class="big">22.35%</div><div class="lbl">Marginal ACoS on an added $930.91 in another account — better than that account&#x27;s blended rate, which is the whole point</div><div class="who">weekly client-deck analysis · SLK-N1</div></div><div class="rec"><div class="big">+55.4% spend, ACoS improved</div><div class="lbl">Spend rose 55.4% while ad revenue rose 62.0%, so ACoS improved from 24.98% to 23.97% — the shape marginal analysis is designed to find</div><div class="who">a flag and banner brand · SLK-W3</div></div></div>
+    <h2>How do you calculate marginal ACoS?</h2>
+<p>Take two comparable periods. Subtract the earlier period&#x27;s ad spend from the later period&#x27;s to get the change in spend. Do the same for ad-attributed revenue. Divide the spend delta by the revenue delta and express it as a percentage.</p>
+<p>That figure answers a different question from blended ACoS. Blended ACoS describes the average of every decision ever made in the account, most of them made by someone else, months ago. Marginal ACoS describes the decision you made last week.</p>
+<p>A worked case: restoring $588.02 of weekly spend to a defensive campaign moved revenue from $3,402.84 to $11,790.91. The marginal ACoS on that restored spend was 7.01%. Putting $588 back recovered about $8,400 of weekly revenue — which no blended figure would ever have surfaced.</p>
+<h2>Why does blended ACoS hide good decisions?</h2>
+<p>Because a healthy blended ACoS is dominated by branded campaigns that convert cheaply regardless of what you do. Add spend to a non-branded campaign at a 25% marginal ACoS in an account blending at 15%, and the blended number gets worse while the business gets better.</p>
+<p>The predictable result is that scaling decisions get reversed by their own reporting. Someone adds spend, the headline metric deteriorates, the spend gets pulled, and the account slowly optimises itself into harvesting only the demand it already had.</p>
+<p>We have watched that exact sequence kill a good account — spend cut from $135K to $70K a month chasing a 10% total advertising cost of sale target, traffic down 30% year over year. The forensic audit concluded on the record that consolidation and the efficiency target had killed the best-performing campaigns. Restoring spend aggressively produced the first $70K week in five months, then a $77K week, and it took three to four weeks of algorithm recovery to get there.</p>
+<h2>What does a good marginal ACoS look like?</h2>
+<p>Below your break-even ACoS, and ideally below or near the blended rate of the lane you are adding to. The comparison is against the lane, not the account: an added dollar in non-branded discovery should be judged against non-branded economics.</p>
+<p>The rarest and best shape is the one we found in a flag and banner account: spend up 55.4%, ad revenue up 62.0%, so ACoS improved from 24.98% to 23.97% despite an aggressive scale-up. Spending 55% more and getting cheaper only happens when the marginal dollar is landing somewhere genuinely under-served.</p>
+<ul class="body">
+<li>Marginal ACoS below break-even: the added spend is profitable. Add more.</li>
+<li>Marginal ACoS between break-even and blended: profitable but diluting. Fine during a growth push, worth a note in reporting.</li>
+<li>Marginal ACoS above break-even: the added spend is buying revenue at a loss. Stop, and check whether it is buying rank instead — sometimes that is the intent.</li>
+<li>Marginal revenue near zero on real added spend: you have found a saturated lane. Move the money.</li>
+</ul>
+<h2>How do you put this in a weekly report?</h2>
+<p>One line per deliberate change: what we changed, what it cost, what it returned, marginal ACoS. That turns a weekly report from a description of the past into a record of decisions, which is a different document with a different effect on the client relationship.</p>
+<p>It also protects good work. When the blended number moves the wrong way for the right reason, a marginal line explains it before anyone has to ask. And it makes the reverse honest too — when a change did not pay, the report says so.</p>
+<p>For the structural version of the same fix, see <a href="/learn/ppc/strategy-lanes/">strategy lanes</a>, which separates branded harvest from non-branded growth so the two stop averaging each other away.</p>
+    
+    <div class="takeaway"><span class="lbl">What to do with this</span><p>Add one line to your weekly reporting: the marginal ACoS on every deliberate spend change. It costs nothing, it surfaces wins that blended reporting buries, and it stops good scaling decisions from being reversed by their own averages.</p></div>
+    <section class="faq"><h2>Frequently asked</h2><details><summary>Is marginal ACoS the same as incremental ACoS?</summary><p>People use the terms interchangeably. Both mean cost of sale on the change rather than on the total. We prefer marginal because incremental is already overloaded by the incrementality debate, which is a separate and larger argument about whether ads create demand at all.</p></details>
+<details><summary>What period should I compare?</summary><p>Week over week for tactical changes and four-to-eight weeks for structural ones. Never seven days for a structural change — Amazon settles fees late and attributed sales keep moving, so a short window will show you noise and call it a result.</p></details>
+<details><summary>Why doesn&#x27;t any tool report this by default?</summary><p>Because it requires knowing which change you made and when, and most reporting is built on account state rather than on a decision log. If your system cannot tell you what changed and why, it cannot compute marginal anything.</p></details></section>
+
+    <div class="cta">
+      <p>Dr. PPC runs your Amazon ads daily — an AI agent doing the work, operators from a $500M+ Amazon team supervising. $300/mo + 3% of ad spend, published and capped, month-to-month.</p>
+      <a class="btn" href="/#demo">Start free for 30 days</a>
+    </div>
+
+    <section class="links">
+<h2>Part of</h2><ul>
+<li><a href="/learn/acos/">What Is ACoS? The Complete Amazon ACoS Guide</a><span>Pillar guide</span></li></ul>
+<h2>Read next</h2><ul>
+<li><a href="/learn/acos/blended-acos/">Blended ACoS Is Lying To You</a><span>How-to</span></li>
+<li><a href="/learn/acos/branded-vs-nonbranded-acos/">Branded vs Non-Branded ACoS: Two Different Jobs</a><span>Comparison</span></li>
+<li><a href="/learn/acos/acos-vs-roas/">ACoS vs ROAS: Same Data Two Directions</a><span>Comparison</span></li>
+</ul>
+<h2>Related</h2><ul>
+<li><a href="https://remktr.com/case-studies/">Amazon DSP Case Studies</a><span>Pillar guide · remktr.com</span></li>
+</ul>
+</section>
+
+    <div class="sourcenote">Sources for this page: SLK-N1, SLK-W2, SLK-W3.
+      Figures come from accounts under active management; brands are described by category, never named.
+      Third-party numbers are attributed inline.</div>
+  </article>
+</div>
+
+<footer><div class="wrap"><div class="fine">Dr. PPC is a product of Orbit, built inside a team that manages more than $500M a year of Amazon revenue. Client names are never published. Figures on this page come from accounts we run and are labelled with their sample size.</div></div></footer>
+</body>
+</html>

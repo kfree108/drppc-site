@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What&#x27;s A Good ACoS On Amazon? Benchmarks From A $500M Portfolio | Dr. PPC</title>
+<meta name="description" content="There is no universal good ACoS — there is your break-even ACoS and the bands healthy accounts actually run in. Here are the ranges we operate across managed accounts, and the two numbers that decide yours." />
+<link rel="canonical" href="https://drppc.ai/learn/acos/what-is-a-good-acos/" />
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="What&#x27;s A Good ACoS On Amazon? Benchmarks From A $500M Portfolio" />
+<meta property="og:description" content="There is no universal good ACoS — there is your break-even ACoS and the bands healthy accounts actually run in. Here are the ranges we operate across managed accounts, and the two numbers that decide yours." />
+<meta property="og:url" content="https://drppc.ai/learn/acos/what-is-a-good-acos/" />
+<meta property="article:modified_time" content="2026-08-19" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --base:#08060f; --raised:#0e0b1a; --fg:#f4f4f6; --dim:#9a97a8; --line:#221e33;
+  --accent:#00ff9d; --amber:#f59e0b;
+  --display:'Archivo',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--base);color:var(--fg);font-family:var(--body);
+  line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+a{color:var(--accent)}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.02em;line-height:1.12;margin:0}
+h1{font-size:clamp(30px,4.6vw,46px);font-weight:800;margin:14px 0 0}
+h2{font-size:clamp(21px,2.6vw,28px);font-weight:700;margin:46px 0 12px}
+h3{font-size:18px;font-weight:700;margin:28px 0 8px}
+p{margin:0 0 1.05em}
+.kicker{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.dim{color:var(--dim)}
+nav.top{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);
+  background:rgba(8,6,15,.9);backdrop-filter:blur(10px)}
+nav.top .bar{max-width:1080px;margin:0 auto;padding:13px 22px;display:flex;gap:20px;
+  align-items:center;justify-content:space-between;flex-wrap:wrap}
+.logo{font-family:var(--display);font-weight:800;font-size:17px;text-decoration:none;color:var(--fg)}
+.logo span{color:var(--accent)}
+nav.top ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav.top ul a{font-family:var(--mono);font-size:12px;color:var(--dim);text-decoration:none;
+  letter-spacing:.04em;text-transform:uppercase}
+nav.top ul a:hover{color:var(--accent)}
+.navcta{font-family:var(--mono);font-size:12px;font-weight:700;background:var(--accent);
+  color:var(--base);padding:8px 14px;border-radius:7px;text-decoration:none}
+.crumbs{font-family:var(--mono);font-size:11.5px;color:#6d6a7c;padding:22px 0 0;
+  display:flex;flex-wrap:wrap;gap:7px}
+.crumbs a{color:#6d6a7c;text-decoration:none}
+.crumbs a:hover{color:var(--accent)}
+article{padding:0 0 60px}
+.meta{font-family:var(--mono);font-size:11.5px;color:#6d6a7c;margin:16px 0 30px;
+  padding-bottom:18px;border-bottom:1px solid var(--line)}
+.answer{border-left:3px solid var(--accent);background:rgba(0,255,157,.05);
+  padding:20px 22px;border-radius:0 11px 11px 0;margin:0 0 30px;font-size:18px}
+.answer .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);display:block;margin-bottom:9px}
+.answer p{margin:0}
+.receipts{display:grid;gap:13px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin:26px 0}
+.rec{border:1px solid var(--line);border-radius:12px;padding:20px;background:var(--raised)}
+.rec .big{font-family:var(--display);font-size:28px;font-weight:800;color:var(--accent);
+  letter-spacing:-.03em;line-height:1.1}
+.rec .lbl{font-family:var(--mono);font-size:11.5px;color:var(--dim);margin-top:9px;line-height:1.55}
+.rec .who{font-family:var(--mono);font-size:10.5px;color:#6d6a7c;margin-top:8px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;
+  background:var(--raised);margin:24px 0}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{padding:13px 15px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--dim);font-weight:500}
+tbody tr:last-child td{border-bottom:none}
+td:first-child{color:var(--dim);font-family:var(--mono);font-size:12.5px}
+caption{caption-side:top;text-align:left;padding:14px 15px 0;font-family:var(--mono);
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+ul.body,ol.body{margin:0 0 1.2em;padding-left:22px}
+ul.body li,ol.body li{margin-bottom:.5em}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0 0 1.4em}
+.steps li{counter-increment:s;position:relative;padding:0 0 14px 40px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px;height:26px;
+  border-radius:7px;background:rgba(0,255,157,.1);border:1px solid rgba(0,255,157,.3);
+  color:var(--accent);font-family:var(--mono);font-size:12px;font-weight:700;
+  display:flex;align-items:center;justify-content:center}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none;
+  display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:19px}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--dim);font-size:15.4px;margin:12px 0 0}
+.takeaway{border:1px solid rgba(0,255,157,.3);border-radius:13px;padding:24px;
+  background:linear-gradient(180deg,rgba(0,255,157,.05),rgba(14,11,26,.9));margin:34px 0}
+.takeaway .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);display:block;margin-bottom:9px}
+.cta{border:1px solid var(--line);border-radius:13px;padding:26px;background:var(--raised);margin:34px 0}
+.cta p{color:var(--dim);font-size:15px}
+.btn{display:inline-block;background:var(--accent);color:var(--base);font-weight:800;
+  font-size:15.5px;padding:13px 26px;border-radius:9px;text-decoration:none;margin-top:6px}
+.links{border-top:1px solid var(--line);margin-top:44px;padding-top:28px}
+.links h2{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--dim);font-weight:500;margin:0 0 14px}
+.links ul{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:9px}
+.links li a{font-size:15.5px;text-decoration:none}
+.links li a:hover{text-decoration:underline}
+.links li span{display:block;font-family:var(--mono);font-size:11px;color:#6d6a7c;margin-top:2px}
+.spokegrid{display:grid;gap:11px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  list-style:none;padding:0;margin:0}
+.spokegrid li{border:1px solid var(--line);border-radius:11px;padding:15px 17px;background:var(--raised)}
+.sourcenote{font-family:var(--mono);font-size:11px;color:#6d6a7c;line-height:1.7;
+  border-top:1px solid var(--line);margin-top:34px;padding-top:20px}
+footer{border-top:1px solid var(--line);padding:34px 0 60px}
+footer .fine{font-family:var(--mono);font-size:11px;color:#6d6a7c;max-width:62ch;line-height:1.8}
+@media(max-width:640px){.answer{font-size:16.5px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What's A Good ACoS On Amazon? Benchmarks By Category",
+  "description": "There is no universal good ACoS — there is your break-even ACoS and the bands healthy accounts actually run in. Here are the ranges we operate across managed accounts, and the two numbers that decide yours.",
+  "datePublished": "2026-08-19",
+  "dateModified": "2026-08-19",
+  "wordCount": 834,
+  "inLanguage": "en-US",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://drppc.ai/learn/acos/what-is-a-good-acos/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Dr. PPC (Orbit)",
+    "url": "https://drppc.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dr. PPC (Orbit)",
+    "url": "https://drppc.ai"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "what is a good acos"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drppc.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "What Is ACoS? The Complete Amazon ACoS Guide",
+      "item": "https://drppc.ai/learn/acos/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "What's A Good ACoS On Amazon? Benchmarks By Category",
+      "item": "https://drppc.ai/learn/acos/what-is-a-good-acos/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the average ACoS on Amazon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any single average is misleading because branded and non-branded campaigns behave completely differently. In our managed accounts branded ACoS runs roughly 2–13% and non-branded roughly 25–30% in steady state — the blended figure in between describes no real campaign."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a 100% ACoS ever acceptable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "During a deliberate launch or rank push, yes, for a defined window. As a steady state it means you are buying revenue at cost. The distinction that matters is whether there is an end date and a rank target attached."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I optimise ACoS or TACoS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use ACoS to judge individual campaign decisions and TACoS to judge whether the whole programme is earning its place — and optimise profit dollars over both. We have seen a TACoS move from 15% to 20% cost $5,000 of profit while looking like nothing much on a chart."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav class="top"><div class="bar">
+  <a class="logo" href="/">Dr.<span>PPC</span></a>
+  <ul><li><a href="/learn/acos/">ACoS</a></li><li><a href="/vs/">Compare</a></li><li><a href="/learn/ppc/">Playbook</a></li><li><a href="/statistics/">Statistics</a></li><li><a href="/answers/">Answers</a></li></ul>
+  <a class="navcta" href="/#demo">Start free for 30 days</a>
+</div></nav>
+
+<div class="wrap">
+  <div class="crumbs"><a href="/">Home</a> › <a href="/learn/acos/">What Is ACoS? The Complete Amazon ACoS Guide</a> › <span>What&#x27;s A Good ACoS On Amazon? Benchmarks By Category</span></div>
+  <article>
+    <span class="kicker">Answer</span>
+    <h1>What&#x27;s A Good ACoS On Amazon? Benchmarks By Category</h1>
+    <div class="meta">Updated 2026-08-19 · 834 words ·
+      Written from 3 first-party data point(s) in our source bank</div>
+
+    <div class="answer"><span class="lbl">The short answer</span><p>A good ACoS is any figure below your break-even ACoS that still buys the growth you want. Across our managed accounts, healthy non-branded ACoS runs 25–30% while branded runs 2–13%. Blending them into one number is what makes the question feel unanswerable.</p></div>
+
+    <div class="receipts"><div class="rec"><div class="big">76%</div><div class="lbl">Break-even ACoS in one recovery-device account — which makes a 40% ACoS excellent there and ruinous elsewhere</div><div class="who">an FDA-cleared recovery-device brand · GEM-W-DEVICE</div></div><div class="rec"><div class="big">2.12% – 12.7%</div><div class="lbl">The branded ACoS range across managed accounts: 2.12% on a mature brand, about 12.7% on a first-year brand</div><div class="who">portfolio snapshot · SLK-ST8</div></div><div class="rec"><div class="big">25–30%</div><div class="lbl">Non-branded ACoS band that pairs with a 10–12% TACoS in a healthy, profitable supplement account</div><div class="who">operating standard across managed accounts · GEM-ST-BANDS</div></div></div>
+    <h2>Why does nobody give you a straight number?</h2>
+<p>Because the honest answer depends on two figures nobody outside your business knows: your contribution margin and your growth intent. A 40% ACoS is a disaster on a 30% margin product and a bargain on one with a 76% break-even.</p>
+<p>We have measured a break-even ACoS of 76% in a live account, against a $36 target cost per acquisition the founder was happy with because he was paying more on other channels. In that account, ACoS figures that would panic most sellers were simply correct.</p>
+<p>So the useful question is not what a good ACoS is. It is: what is my break-even ACoS, and how far below it do I want to sit given what I am trying to do this quarter.</p>
+<h2>What are the bands healthy accounts run in?</h2>
+<p>Split branded from non-branded before you compare anything. Blended ACoS is the number that makes this question unanswerable, because it averages an auction you already win with one you are trying to enter.</p>
+<p>Across managed accounts, branded ACoS on a healthy brand runs from about 2% on a mature brand with strong organic rank to roughly 13% on a brand in its first year. Non-branded sits far higher by design — 25% to 30% paired with a 10–12% total advertising cost of sale is what a healthy, profitable supplement account looks like.</p>
+<p>During a deliberate rank push we accept much worse and say so up front: an ACoS ladder of roughly 45%, then 30–35%, then 25% as position consolidates. Outside a push, we treat 200% ACoS as the threshold for killing a target rather than nursing it.</p>
+<ul class="body">
+<li>Branded, mature brand: ~2–6%</li>
+<li>Branded, first-year brand: ~8–13%</li>
+<li>Non-branded, steady state: ~25–30%</li>
+<li>Non-branded, active rank push: 45% falling to 25% over the push</li>
+<li>Kill threshold outside a push: ~200% ACoS</li>
+</ul>
+<h2>How do you calculate your break-even ACoS?</h2>
+<p>Break-even ACoS is your contribution margin expressed as a percentage of selling price. If $10 of a $40 product is profit after cost of goods, Amazon fees and fulfilment, your break-even ACoS is 25% — spend more than that per incremental sale and the sale costs you money.</p>
+<p>Two things people get wrong here. First, they use gross margin rather than contribution margin, which ignores referral fees, fulfilment, storage and returns processing. Second, they calculate it once and never again, while fee changes and price changes move it every quarter.</p>
+<p>Third, and most consequential: they forget lifetime value. If a meaningful share of first orders convert to Subscribe &amp; Save, your true break-even on a first order is much higher than the single-order arithmetic suggests. See <a href="/learn/acos/ltv-bidding/">how to justify a painful CPC with LTV math</a>.</p>
+<h2>What if your ACoS is far better than these bands?</h2>
+<p>Then you are probably underspending, and that is a growth problem rather than a win. We have seen an account sitting at a 5% total advertising cost of sale while sales fell 40% — beautifully efficient, steadily shrinking.</p>
+<p>The test is whether your non-branded impression share is growing. If ACoS is excellent and non-branded share is flat, your efficiency is coming from harvesting demand you already had. That is the blended-ACoS illusion in its purest form, and the client question it eventually produces is the one every agency dreads: what exactly are you doing for my non-branded growth?</p>
+    
+    <div class="takeaway"><span class="lbl">What to do with this</span><p>Work out your break-even ACoS from contribution margin, then split branded from non-branded reporting. Those two moves turn an unanswerable benchmarking question into two concrete targets you can manage against.</p></div>
+    <section class="faq"><h2>Frequently asked</h2><details><summary>What is the average ACoS on Amazon?</summary><p>Any single average is misleading because branded and non-branded campaigns behave completely differently. In our managed accounts branded ACoS runs roughly 2–13% and non-branded roughly 25–30% in steady state — the blended figure in between describes no real campaign.</p></details>
+<details><summary>Is a 100% ACoS ever acceptable?</summary><p>During a deliberate launch or rank push, yes, for a defined window. As a steady state it means you are buying revenue at cost. The distinction that matters is whether there is an end date and a rank target attached.</p></details>
+<details><summary>Should I optimise ACoS or TACoS?</summary><p>Use ACoS to judge individual campaign decisions and TACoS to judge whether the whole programme is earning its place — and optimise profit dollars over both. We have seen a TACoS move from 15% to 20% cost $5,000 of profit while looking like nothing much on a chart.</p></details></section>
+
+    <div class="cta">
+      <p>Dr. PPC runs your Amazon ads daily — an AI agent doing the work, operators from a $500M+ Amazon team supervising. $300/mo + 3% of ad spend, published and capped, month-to-month.</p>
+      <a class="btn" href="/#demo">Start free for 30 days</a>
+    </div>
+
+    <section class="links">
+<h2>Part of</h2><ul>
+<li><a href="/learn/acos/">What Is ACoS? The Complete Amazon ACoS Guide</a><span>Pillar guide</span></li></ul>
+<h2>Read next</h2><ul>
+<li><a href="/learn/acos/average-acos/">Average Amazon ACoS: What We See Across The Portfolio</a><span>Data</span></li>
+<li><a href="/learn/acos/lower-acos/">How To Lower ACoS Without Killing Sales</a><span>How-to</span></li>
+<li><a href="/learn/acos/break-even-acos/">Break-Even ACoS: The Only ACoS Number That Matters</a><span>How-to</span></li>
+</ul>
+<h2>Related</h2><ul>
+<li><a href="/statistics/amazon-acos-benchmarks/">Amazon ACoS Benchmarks 2026</a><span>Data</span></li>
+</ul>
+</section>
+
+    <div class="sourcenote">Sources for this page: GEM-ST-BANDS, GEM-W-DEVICE, SLK-ST8.
+      Figures come from accounts under active management; brands are described by category, never named.
+      Third-party numbers are attributed inline.</div>
+  </article>
+</div>
+
+<footer><div class="wrap"><div class="fine">Dr. PPC is a product of Orbit, built inside a team that manages more than $500M a year of Amazon revenue. Client names are never published. Figures on this page come from accounts we run and are labelled with their sample size.</div></div></footer>
+</body>
+</html>

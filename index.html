@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dr. PPC — Fable 5 Runs Your Amazon Ads. Built On $500M+ Of Managed Revenue.</title>
+<meta name="description" content="Dr. PPC is an autonomous Amazon ad management system powered by Fable 5, built on the proprietary playbooks of an agency that has managed $500M+ for brands like HexClad, Ridge, BK Beauty and Beardbrand. You choose the approval level. Orbit software included free. $300/mo + 3% of ad spend. First 30 days free." />
+<link rel="canonical" href="https://drppc.ai/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Dr. PPC — Fable 5 runs your Amazon ads" />
+<meta property="og:description" content="An autonomous Amazon advertising system built on $500M+ of managed revenue. You pick the approval level. Orbit software included free. First 30 days free." />
+<meta property="og:url" content="https://drppc.ai/" />
+<meta property="og:image" content="https://drppc.ai/assets/drppc-poster.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M4G8GYYYXE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date()); gtag('config', 'G-M4G8GYYYXE');
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[data-cta]').forEach(function(el){
+      el.addEventListener('click', function(){ gtag('event','book_demo_click',{location: el.dataset.cta}); });
+    });
+    var v=document.querySelector('video');
+    if(v){ var p=v.play(); if(p&&p.catch){p.catch(function(){});}
+      document.addEventListener('click',function once(){v.play().catch(function(){});document.removeEventListener('click',once);}); }
+    /* console mock tabs — presentational only */
+    document.querySelectorAll('[data-tab]').forEach(function(t){
+      t.addEventListener('click', function(){
+        var root = t.closest('.console');
+        root.querySelectorAll('[data-tab]').forEach(function(x){x.classList.remove('on');});
+        t.classList.add('on');
+        root.querySelectorAll('[data-pane]').forEach(function(p){
+          p.hidden = (p.dataset.pane !== t.dataset.tab);
+        });
+      });
+    });
+  });
+</script>
+<style>
+:root{
+  --base:#08060f; --raised:#0e0b1a; --fg:#f4f4f6; --dim:#9a97a8; --line:#221e33;
+  --accent:#00ff9d; --cyan:#00e5ff; --amber:#f59e0b; --rose:#f4718b;
+  --display:'Archivo',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--base);color:var(--fg);font-family:var(--body);line-height:1.65;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px;}
+.narrow{max-width:780px;}
+a{color:var(--accent);}
+img{max-width:100%;}
+.kicker{font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.02em;line-height:1.08;margin:0;}
+h1{font-size:clamp(34px,5.4vw,62px);font-weight:800;}
+h2{font-size:clamp(26px,3.7vw,40px);font-weight:700;}
+h3{font-size:18px;font-weight:700;}
+p{margin:.6em 0;} .dim{color:var(--dim);} .mono{font-family:var(--mono);}
+
+nav.top{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(8,6,15,.88);backdrop-filter:blur(10px);}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:13px 22px;}
+.logo{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.02em;}
+.logo span{color:var(--accent);}
+.navcta{font-family:var(--mono);font-size:12.5px;font-weight:700;background:var(--accent);color:var(--base);padding:9px 16px;border-radius:7px;text-decoration:none;}
+
+/* HERO with video */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(244,244,246,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(244,244,246,.035) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 30% 25%,#000 35%,transparent 100%);mask-image:radial-gradient(ellipse 80% 70% at 30% 25%,#000 35%,transparent 100%);}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:64px 22px 68px;}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:34px;padding-top:44px;}}
+.free-pill{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(0,255,157,.35);background:rgba(0,255,157,.06);padding:6px 14px;border-radius:100px;margin-bottom:22px;}
+.lede{font-size:18.5px;color:var(--dim);max-width:54ch;margin-top:20px;}
+.btn{display:inline-block;background:var(--accent);color:var(--base);font-weight:800;font-size:16.5px;padding:15px 30px;border-radius:9px;text-decoration:none;transition:filter .15s;}
+.btn:hover{filter:brightness(1.12);}
+.btn-sub{display:block;margin-top:12px;font-family:var(--mono);font-size:12.5px;color:var(--dim);}
+.doc-frame{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5);}
+.doc-frame video{display:block;width:100%;height:auto;}
+.doc-badge{position:absolute;left:14px;bottom:14px;right:14px;background:rgba(8,6,15,.82);backdrop-filter:blur(8px);border:1px solid rgba(0,255,157,.25);border-radius:11px;padding:12px 14px;}
+.doc-badge .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);}
+.doc-badge .t{font-family:var(--display);font-weight:700;font-size:15.5px;margin-top:3px;}
+.doc-badge .s{font-size:12px;color:var(--dim);margin-top:2px;}
+.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:6px;animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+
+.ticker{border-bottom:1px solid var(--line);background:rgba(14,11,26,.6);overflow:hidden;padding:13px 0;}
+.tick-track{display:flex;white-space:nowrap;animation:tick 42s linear infinite;}
+@keyframes tick{to{transform:translateX(-50%);}}
+.tick-track span{font-family:var(--mono);font-size:12.5px;color:var(--dim);padding:0 26px;}
+.tick-track span b{color:var(--fg);font-weight:500;}
+@media(prefers-reduced-motion:reduce){.tick-track{animation:none;}}
+
+section{padding:80px 0;border-bottom:1px solid var(--line);}
+.section-head{max-width:680px;margin-bottom:40px;}
+.section-head h2{margin-top:12px;}
+.section-head p{margin-top:14px;color:var(--dim);font-size:16.5px;}
+
+.brands{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:26px;}
+.brand{background:var(--raised);border:1px solid var(--line);border-radius:12px;padding:18px 16px;text-align:center;}
+.brand .nm{font-family:var(--display);font-weight:700;font-size:16px;}
+.brand .cat{font-family:var(--mono);font-size:10.5px;color:var(--dim);margin-top:5px;letter-spacing:.06em;}
+
+.scale{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+.sc{background:var(--raised);border:1px solid var(--line);border-radius:13px;padding:24px;}
+.sc .big{font-family:var(--display);font-size:36px;font-weight:800;color:var(--accent);letter-spacing:-.03em;line-height:1;}
+.sc .lbl{font-size:14px;color:var(--dim);margin-top:10px;}
+
+.stack{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));}
+.step{background:var(--raised);border:1px solid var(--line);border-radius:13px;padding:22px;}
+.step .n{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:.16em;}
+.step h3{margin:9px 0 7px;font-size:17px;}
+.step p{font-size:14.5px;color:var(--dim);margin:0;}
+
+.watch{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));margin-top:8px;}
+.w{border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:0 11px 11px 0;padding:16px 18px;background:var(--raised);}
+.w h3{font-size:14.5px;font-family:var(--body);font-weight:600;}
+.w p{font-size:13.5px;color:var(--dim);margin:5px 0 0;}
+
+.ladder{display:grid;gap:16px;grid-template-columns:1fr 1fr;}
+@media(max-width:720px){.ladder{grid-template-columns:1fr;}}
+.lcol{border:1px solid var(--line);border-radius:13px;padding:26px;background:var(--raised);}
+.lcol.auto{border-color:rgba(0,255,157,.3);}
+.lcol h3{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;}
+.lcol.auto h3{color:var(--accent);} .lcol.human h3{color:var(--amber);}
+.lcol ul{margin:16px 0 0;padding:0;list-style:none;}
+.lcol li{font-size:14.7px;padding:9px 0 9px 24px;position:relative;border-bottom:1px solid rgba(34,30,51,.6);}
+.lcol li:last-child{border-bottom:none;}
+.lcol li::before{content:"›";position:absolute;left:4px;font-family:var(--mono);color:var(--accent);}
+.lcol.human li::before{content:"⌘";color:var(--amber);font-size:11px;top:11px;}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:var(--raised);}
+table{width:100%;border-collapse:collapse;font-size:15px;}
+th,td{padding:15px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+thead th{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:500;}
+thead th.us{color:var(--accent);}
+td.us{background:rgba(0,255,157,.045);font-weight:500;}
+td:first-child{color:var(--dim);font-family:var(--mono);font-size:12.5px;}
+tbody tr:last-child td{border-bottom:none;}
+
+/* ---------- product screenshots ---------- */
+.shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--raised);box-shadow:0 26px 70px rgba(0,0,0,.45);}
+.shot img{display:block;width:100%;height:auto;}
+.shot-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.shot-cap{font-family:var(--mono);font-size:11.5px;color:#6d6a7c;margin-top:11px;letter-spacing:.03em;}
+.swipe-hint{display:none;}
+@media(max-width:760px){
+  .shot-scroll .shot{min-width:900px;}
+  .swipe-hint{display:inline;color:var(--accent);}
+}
+
+/* ---------- console recreation ---------- */
+.console{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:var(--raised);box-shadow:0 26px 70px rgba(0,0,0,.45);}
+.console-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(8,6,15,.6);}
+.dots{display:flex;gap:6px;}
+.dots i{width:9px;height:9px;border-radius:50%;background:#332e47;display:block;}
+.crumb{font-family:var(--mono);font-size:11.5px;color:var(--dim);}
+.crumb b{color:var(--fg);font-weight:500;}
+.badge{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);border:1px solid rgba(245,158,11,.35);background:rgba(245,158,11,.08);padding:5px 11px;border-radius:100px;white-space:nowrap;}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;padding:12px 16px 0;}
+.tabs button{font-family:var(--mono);font-size:12px;color:var(--dim);background:transparent;border:1px solid var(--line);border-radius:8px 8px 0 0;border-bottom:none;padding:9px 15px;cursor:pointer;}
+.tabs button.on{color:var(--accent);background:rgba(0,255,157,.06);border-color:rgba(0,255,157,.3);}
+.pane{padding:22px 16px 24px;border-top:1px solid var(--line);margin-top:-1px;}
+.update{border-left:2px solid var(--accent);padding:2px 0 2px 18px;max-width:74ch;}
+.update .stamp{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);}
+.update p{font-size:15px;color:#cfccdb;margin:11px 0;}
+.update p strong{color:var(--fg);}
+.props{display:grid;gap:14px;}
+.prop{border:1px solid var(--line);border-radius:12px;background:rgba(8,6,15,.55);padding:18px;}
+.prop-top{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:11px;}
+.tag{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:5px;border:1px solid var(--line);color:var(--dim);}
+.tag.act{color:var(--cyan);border-color:rgba(0,229,255,.32);background:rgba(0,229,255,.06);}
+.tag.wait{color:var(--amber);border-color:rgba(245,158,11,.32);background:rgba(245,158,11,.07);}
+.tag.done{color:var(--accent);border-color:rgba(0,255,157,.32);background:rgba(0,255,157,.07);}
+.prop h4{font-family:var(--display);font-size:17px;font-weight:700;margin:0 0 12px;letter-spacing:-.01em;line-height:1.3;}
+.prop h4 code{font-family:var(--mono);font-size:15px;color:var(--accent);background:rgba(0,255,157,.08);padding:1px 6px;border-radius:5px;}
+.rows{display:grid;gap:9px;margin:0 0 16px;}
+.row{display:grid;grid-template-columns:118px 1fr;gap:14px;font-size:14px;align-items:start;}
+@media(max-width:560px){.row{grid-template-columns:1fr;gap:2px;}}
+.row dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);padding-top:4px;}
+.row dd{margin:0;color:#cfccdb;}
+.row dd b{color:var(--fg);font-weight:600;}
+.row.rb dt{color:var(--rose);}
+.actions{display:flex;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:15px;}
+.approve,.reject{font-family:var(--mono);font-size:12.5px;font-weight:700;border-radius:7px;padding:10px 16px;border:1px solid;cursor:default;}
+.approve{background:var(--accent);color:var(--base);border-color:var(--accent);}
+.reject{background:transparent;color:var(--dim);border-color:var(--line);}
+.mock-note{font-family:var(--mono);font-size:11px;color:#6d6a7c;margin-left:auto;align-self:center;}
+
+/* ---------- approval levels ---------- */
+.levels{display:grid;gap:16px;grid-template-columns:repeat(3,1fr);}
+@media(max-width:900px){.levels{grid-template-columns:1fr;}}
+.lev{border:1px solid var(--line);border-radius:14px;background:var(--raised);padding:26px;display:flex;flex-direction:column;}
+.lev.l1{border-top:3px solid var(--amber);}
+.lev.l2{border-top:3px solid var(--cyan);}
+.lev.l3{border-top:3px solid var(--accent);}
+.lev .lv{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);}
+.lev.l1 .lv{color:var(--amber);} .lev.l2 .lv{color:var(--cyan);} .lev.l3 .lv{color:var(--accent);}
+.lev h3{margin:10px 0 10px;font-size:20px;}
+.lev>p{font-size:14.6px;color:var(--dim);margin:0 0 16px;}
+.lev ul{margin:0;padding:0;list-style:none;}
+.lev li{font-size:14px;color:#cfccdb;padding:7px 0 7px 20px;position:relative;}
+.lev li::before{content:"›";position:absolute;left:2px;font-family:var(--mono);color:var(--dim);}
+.lev .foot{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:13.4px;color:var(--dim);}
+.lev .foot b{color:var(--fg);font-weight:600;display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;margin-bottom:5px;}
+.constant{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:22px;}
+.const{border:1px solid var(--line);border-radius:11px;background:rgba(14,11,26,.55);padding:17px 19px;}
+.const h4{font-family:var(--body);font-size:14.5px;font-weight:600;margin:0 0 5px;}
+.const p{font-size:13.4px;color:var(--dim);margin:0;}
+
+/* ---------- orbit ---------- */
+.orbit-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:26px;}
+.mod{border:1px solid var(--line);border-radius:12px;background:var(--raised);padding:20px;}
+.mod .g{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);}
+.mod ul{margin:12px 0 0;padding:0;list-style:none;}
+.mod li{font-size:14.2px;color:#cfccdb;padding:6px 0;border-bottom:1px solid rgba(34,30,51,.55);}
+.mod li:last-child{border-bottom:none;}
+.mod li span{color:var(--dim);font-size:12.8px;display:block;}
+.kpis{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));margin-bottom:14px;}
+.kpi{border:1px solid var(--line);border-radius:11px;background:rgba(8,6,15,.55);padding:15px 16px;}
+.kpi .k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
+.kpi .v{font-family:var(--display);font-size:23px;font-weight:800;letter-spacing:-.02em;margin-top:6px;}
+.kpi .v.good{color:var(--accent);}
+.stmini table{font-size:13.5px;}
+.stmini th,.stmini td{padding:11px 13px;white-space:nowrap;}
+.stmini td:first-child{color:var(--fg);font-family:var(--body);font-size:13.5px;}
+.op{font-family:var(--mono);font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px;}
+.op.hi{color:var(--accent);background:rgba(0,255,157,.1);}
+.op.md{color:var(--amber);background:rgba(245,158,11,.1);}
+.op.lo{color:var(--rose);background:rgba(244,113,139,.1);}
+.free-band{border:1px solid rgba(0,255,157,.28);background:linear-gradient(180deg,rgba(0,255,157,.06),rgba(14,11,26,.9));border-radius:14px;padding:26px 28px;margin-top:28px;}
+.free-band h3{font-size:21px;margin-bottom:8px;}
+.free-band p{color:var(--dim);font-size:15px;margin:0;max-width:72ch;}
+
+.price-card{border:1px solid rgba(0,255,157,.28);border-radius:16px;background:linear-gradient(180deg,rgba(0,255,157,.05),rgba(14,11,26,.9));padding:40px;text-align:center;max-width:640px;margin:0 auto;}
+.price-num{font-family:var(--display);font-size:clamp(36px,5.6vw,56px);font-weight:800;letter-spacing:-.03em;}
+.price-num small{font-size:19px;color:var(--dim);font-weight:600;}
+.price-terms{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin:22px 0 6px;}
+.price-terms span{font-family:var(--mono);font-size:11.5px;color:var(--dim);border:1px solid var(--line);padding:6px 12px;border-radius:100px;}
+.incl{text-align:left;max-width:460px;margin:26px auto 0;padding:0;}
+.incl li{list-style:none;font-size:14.8px;padding:8px 0 8px 26px;position:relative;}
+.incl li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700;}
+
+.faq details{border-bottom:1px solid var(--line);padding:19px 0;}
+.faq summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:16px;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:19px;}
+.faq details[open] summary::after{content:"–";}
+.faq p{color:var(--dim);font-size:15.4px;margin:13px 0 0;max-width:70ch;}
+
+footer{padding:40px 0 60px;}
+footer .fine{font-family:var(--mono);font-size:11.5px;color:#6d6a7c;max-width:62ch;line-height:1.7;}
+footer .flinks{font-family:var(--mono);font-size:12px;margin-bottom:20px;display:flex;gap:18px;flex-wrap:wrap;}
+.cta-final{text-align:center;}
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <div class="logo">Dr. <span>PPC</span></div>
+  <a class="navcta" href="#demo" data-cta="nav">Book a demo →</a>
+</div></nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="free-pill">First 30 days free</span>
+      <h1>Meet Dr. PPC.<br />Fable&nbsp;5 runs<br />your Amazon ads.</h1>
+      <p class="lede">He never sleeps, never forgets a product, and never waits for the monthly meeting. Dr. PPC is an autonomous Amazon advertising system — powered by Fable 5, trained on the playbooks of an agency that has managed <strong style="color:var(--fg)">$500M+</strong> for brands you already know. <strong style="color:var(--fg)">You choose how much he does on his own.</strong></p>
+      <div style="margin-top:32px">
+        <a class="btn" href="#demo" data-cta="hero">Book a demo call →</a>
+        <span class="btn-sub">20 minutes. First 30 days free. No contract.</span>
+      </div>
+    </div>
+    <div class="doc-frame">
+      <video src="assets/drppc.mp4" poster="assets/drppc-poster.jpg" autoplay loop muted playsinline preload="metadata" aria-label="Dr. PPC"></video>
+      <div class="doc-badge">
+        <div class="n"><span class="live-dot"></span>On duty · 24/7/365</div>
+        <div class="t">Dr. PPC</div>
+        <div class="s">Amazon advertising, diagnosed daily and treated at the approval level you set.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true"><div class="tick-track">
+  <span><b>$500M+</b> Amazon revenue managed ·</span><span><b>100+</b> brands worked with ·</span><span><b>70+</b> brands live across our group ·</span><span><b>Orbit software included free</b> ·</span><span><b>HexClad</b> ·</span><span><b>Ridge</b> ·</span><span><b>BK Beauty</b> ·</span><span><b>Beardbrand</b> ·</span><span><b>Epic Gardening</b> ·</span><span><b>Powered by Fable 5</b> ·</span>
+  <span><b>$500M+</b> Amazon revenue managed ·</span><span><b>100+</b> brands worked with ·</span><span><b>70+</b> brands live across our group ·</span><span><b>Orbit software included free</b> ·</span><span><b>HexClad</b> ·</span><span><b>Ridge</b> ·</span><span><b>BK Beauty</b> ·</span><span><b>Beardbrand</b> ·</span><span><b>Epic Gardening</b> ·</span><span><b>Powered by Fable 5</b> ·</span>
+</div></div>
+
+<!-- WHERE HE TRAINED -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Where he trained / 01</p>
+      <h2>Dr. PPC did his residency inside a real agency.</h2>
+      <p>Not a startup that read some blog posts about Amazon. Full Circle is a full-service Amazon agency that has managed more than <strong style="color:var(--fg)">half a billion dollars</strong> in Amazon revenue — and every account, every mistake, and every playbook that came out of it is what Dr. PPC learned from.</p>
+    </div>
+    <div class="scale">
+      <div class="sc"><div class="big">$500M+</div><div class="lbl">Amazon revenue managed across the group</div></div>
+      <div class="sc"><div class="big">100+</div><div class="lbl">brands we've worked with</div></div>
+      <div class="sc"><div class="big">70+</div><div class="lbl">brands live across Full Circle and reMKTR today</div></div>
+      <div class="sc"><div class="big">10 yrs</div><div class="lbl">of accumulated category playbooks, feeding the model</div></div>
+    </div>
+    <p class="kicker" style="margin-top:44px">Brands we've worked with</p>
+    <div class="brands">
+      <div class="brand"><div class="nm">HexClad</div><div class="cat">Cookware</div></div>
+      <div class="brand"><div class="nm">Ridge</div><div class="cat">Accessories</div></div>
+      <div class="brand"><div class="nm">BK Beauty</div><div class="cat">Beauty</div></div>
+      <div class="brand"><div class="nm">Beardbrand</div><div class="cat">Grooming</div></div>
+      <div class="brand"><div class="nm">Epic Gardening</div><div class="cat">Home &amp; Garden</div></div>
+      <div class="brand"><div class="nm">The Woobles</div><div class="cat">Crafts</div></div>
+    </div>
+    <p class="dim" style="font-size:14.5px;margin-top:22px;max-width:70ch">These are eight- and nine-figure operators with catalogs in the hundreds of SKUs. Running accounts at that size for years is where the proprietary part comes from — the category-level knowledge of what actually moves a listing, which you cannot get from a tool's documentation.</p>
+  </div>
+</section>
+
+<!-- HOW FABLE 5 IS USED -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">How he thinks / 02</p>
+      <h2>Fable 5, pointed at everything we know.</h2>
+      <p>The model is the engine. Our decade of account data and best practices is the fuel. Together they produce something no dashboard and no junior account manager can: a specific, written strategy for every product you sell — and the discipline to execute it every single day.</p>
+    </div>
+    <div class="stack">
+      <div class="step"><div class="n">01</div><h3>Read everything</h3><p>Every campaign, ad group, keyword, search term, and placement in your account — reconciled against a full attribution window, not the last seven days.</p></div>
+      <div class="step"><div class="n">02</div><h3>Set the goal per product</h3><p>Fable 5 writes an explicit strategy for each ASIN and for the catalog as a whole: what this product is for, what it should return, and what winning looks like this quarter.</p></div>
+      <div class="step"><div class="n">03</div><h3>Propose or act</h3><p>Bids, budgets, negatives, placements, dayparting, structure. Every day, on every product — either applied inside your guardrails or queued for your approval. You decide which.</p></div>
+      <div class="step"><div class="n">04</div><h3>Log every reason</h3><p>Each change is written down with the evidence behind it. If Dr. PPC can't explain why he moved a bid, he doesn't move it.</p></div>
+      <div class="step"><div class="n">05</div><h3>Measure and roll back</h3><p>Every change ships with a measurement window and a rollback trigger. If the result doesn't show up, the change comes back out.</p></div>
+      <div class="step"><div class="n">06</div><h3>Escalate honestly</h3><p>Anything outside his authority goes to a human operator with the context attached — see the ladder below.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE CONSOLE -->
+<section id="console">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">The console / 03</p>
+      <h2>This is what he actually hands you.</h2>
+      <p>Not a score. Not a "health check". A written account update and a stack of specific proposals — each one with the evidence behind it, how it will be measured, and the condition that automatically undoes it. In human-approval mode, nothing reaches Amazon until you click.</p>
+    </div>
+
+    <div class="console">
+      <div class="console-bar">
+        <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="crumb">Orbit · Advertising · <b>Dr PPC™ Console</b></div>
+        <div class="badge">Human approval</div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button type="button" data-tab="analysis">Analysis + proposals</button>
+        <button type="button" data-tab="activity" class="on">Activity + decisions</button>
+      </div>
+
+      <div class="pane" data-pane="analysis" hidden>
+        <div class="update">
+          <div class="stamp">Account update · week 33 · example account</div>
+          <p><strong>The account is profitable, but it is paying for the wrong half of the traffic.</strong> Product targeting is doing the heavy lifting — a little over half the spend, roughly two thirds of the contribution profit. Exact match is the mirror image: it takes a similar share of the budget and returns a fraction of the profit, because a block of mature exact terms is buying clicks that never convert.</p>
+          <p>I have identified <strong>11 mature exact-match entities</strong> with no orders in a full attribution window and a combined spend that would fund your two best product-targeting campaigns for a month. I want to step their bids down rather than pause them, so we keep the rank signal while we stop the bleeding.</p>
+          <p>Separately, top-of-search is converting at a materially better rate between 6pm and 11pm than it does in the morning. I would like to shift placement modifiers toward your own order curve.</p>
+          <p><strong>Four proposals are waiting for you. Nothing has been applied to Amazon.</strong></p>
+        </div>
+      </div>
+
+      <div class="pane" data-pane="activity">
+        <div class="props">
+
+          <div class="prop">
+            <div class="prop-top">
+              <span class="tag act">Bid change</span>
+              <span class="tag">Exact · 14d mature</span>
+              <span class="tag wait">Awaiting approval</span>
+            </div>
+            <h4>Decrease bid on <code>"vitamin c face serum"</code> from $1.29 to $1.19</h4>
+            <dl class="rows">
+              <div class="row"><dt>Evidence</dt><dd>Mature 14-day exact entity — spent <b>$89.65 across 17 clicks with 0 orders</b>. Zero-conversion spend against a $34 target CPA. The term still holds rank, so a step down beats a pause.</dd></div>
+              <div class="row"><dt>Measurement</dt><dd>Hold 14 days. Success = impression share within 10% of today at a lower CPC, with the freed spend absorbed by converting product-targeting entities.</dd></div>
+              <div class="row rb"><dt>Rollback</dt><dd>If clicks fall more than <b>25% within 7 days</b>, the bid is automatically restored to $1.29 and the entity is re-queued for review.</dd></div>
+            </dl>
+            <div class="actions">
+              <span class="approve">Approve and apply to Amazon</span>
+              <span class="reject">Reject</span>
+              <span class="mock-note">Level 1 · your click required</span>
+            </div>
+          </div>
+
+          <div class="prop">
+            <div class="prop-top">
+              <span class="tag act">Negative keyword</span>
+              <span class="tag">Ad group scope</span>
+              <span class="tag wait">Awaiting approval</span>
+            </div>
+            <h4>Add <code>"serum sample free"</code> as a negative exact</h4>
+            <dl class="rows">
+              <div class="row"><dt>Evidence</dt><dd><b>41 clicks, $37.20 spend, 0 orders over 30 days.</b> Intent mismatch — the query is looking for a giveaway, not a purchase. Same pattern across three ad groups.</dd></div>
+              <div class="row"><dt>Measurement</dt><dd>Expect roughly <b>$35/month of wasted spend removed</b>. Watch the parent term's impression share for over-blocking.</dd></div>
+              <div class="row rb"><dt>Rollback</dt><dd>Removed automatically if the parent ad group's click volume drops more than <b>15% in 14 days</b>.</dd></div>
+            </dl>
+            <div class="actions">
+              <span class="approve">Approve and apply to Amazon</span>
+              <span class="reject">Reject</span>
+              <span class="mock-note">Level 2 · would auto-apply</span>
+            </div>
+          </div>
+
+          <div class="prop">
+            <div class="prop-top">
+              <span class="tag act">Budget shift</span>
+              <span class="tag">Campaign scope</span>
+              <span class="tag done">Applied · logged</span>
+            </div>
+            <h4>Move <code>$120/day</code> from a capped, unprofitable ad group into two converting product-targeting campaigns</h4>
+            <dl class="rows">
+              <div class="row"><dt>Evidence</dt><dd>Source ad group hit its cap 9 days running at a <b>96% ACoS</b>. Destination campaigns were budget-limited before 2pm at a <b>31% ACoS</b>.</dd></div>
+              <div class="row"><dt>Measurement</dt><dd>7-day window. Success = blended ACoS down with sales flat or up.</dd></div>
+              <div class="row rb"><dt>Rollback</dt><dd>Budget returns to the original split if destination ACoS rises above <b>45% for 3 consecutive days</b>.</dd></div>
+            </dl>
+            <div class="actions">
+              <span class="reject" style="border-color:rgba(0,255,157,.3);color:var(--accent)">View in change log</span>
+              <span class="mock-note">Level 3 · applied inside guardrails, logged</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <p class="shot-cap">Dr PPC™ Console — representative view. Figures are illustrative examples, not a client account.</p>
+  </div>
+</section>
+
+<!-- APPROVAL LEVELS -->
+<section id="approval">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Your call / 04</p>
+      <h2>You choose how much he does on his own.</h2>
+      <p>"Autonomous" is not one setting, and it should never be the vendor's decision. Dr. PPC runs at whichever of these three levels you pick — and you can change it any time, per account, without renegotiating anything. Some brands start at Level 1 for 60 days, read the log, and move up. Some never do. Both are fine.</p>
+    </div>
+
+    <div class="levels">
+      <div class="lev l1">
+        <div class="lv">Level 01</div>
+        <h3>Full human approval</h3>
+        <p>Dr. PPC does all the analysis and proposes every change. Nothing touches Amazon without a human clicking approve.</p>
+        <ul>
+          <li>Every bid, negative, budget and placement change arrives as a proposal card</li>
+          <li>Each card carries the evidence, the measurement plan and the rollback trigger</li>
+          <li>Approve, reject, or approve in bulk — one click each</li>
+          <li>Rejections are read back into the strategy, so he stops proposing what you keep refusing</li>
+        </ul>
+        <div class="foot"><b>The bid change above</b>Sits in the queue until you click "Approve and apply to Amazon".</div>
+      </div>
+
+      <div class="lev l2">
+        <div class="lv">Level 02</div>
+        <h3>Supervised autonomy</h3>
+        <p>The routine, low-risk work executes on its own inside guardrails you set. Anything above your threshold queues for approval.</p>
+        <ul>
+          <li>Auto-applies: negatives on zero-order terms, bid steps within your band, search-term harvesting</li>
+          <li>Queues for you: anything above the threshold, structural changes, new campaigns</li>
+          <li>You set the band — for example, bid moves up to 10% and budget shifts up to $250/day</li>
+          <li>Daily digest of what ran automatically, with the same evidence attached</li>
+        </ul>
+        <div class="foot"><b>The bid change above</b>An 8% step inside a 10% band — applied automatically, logged, still reversible.</div>
+      </div>
+
+      <div class="lev l3">
+        <div class="lv">Level 03</div>
+        <h3>Fully autonomous</h3>
+        <p>Dr. PPC runs the account inside agreed guardrails. You review the log and the outcomes rather than each decision.</p>
+        <ul>
+          <li>Every change is still written down with its reasoning and its evidence</li>
+          <li>Every change still carries a measurement window and a rollback trigger</li>
+          <li>Guardrails are yours: target profitability, spend ceilings, protected SKUs, untouchable campaigns</li>
+          <li>Weekly written account update; drop back to Level 1 at any moment</li>
+        </ul>
+        <div class="foot"><b>The bid change above</b>Applied at 6am, measured for 14 days, auto-reverted if clicks fall 25%.</div>
+      </div>
+    </div>
+
+    <p class="kicker" style="margin-top:46px">What does not change between levels</p>
+    <div class="constant">
+      <div class="const"><h4>The same evidence trail</h4><p>Level 3 is not a quieter product. Every change produces the identical written record — you're choosing whether to read it before or after.</p></div>
+      <div class="const"><h4>The same rollback triggers</h4><p>Nothing is applied without a condition that undoes it. Autonomy raises the speed, not the risk tolerance.</p></div>
+      <div class="const"><h4>The same hard limits</h4><p>The list below is off-limits at every level, including Level 3. Full autonomy does not mean unlimited authority.</p></div>
+      <div class="const"><h4>The same switch, both ways</h4><p>Move up when you trust it, drop back the week your supply chain gets interesting. Month-to-month, so there's nothing to renegotiate.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT HE WATCHES -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">What he watches / 05</p>
+      <h2>Awareness most agencies don't have on their best day.</h2>
+      <p>A human account manager watches a handful of these, on the accounts they have time for. Dr. PPC watches all of them, on every product, every day.</p>
+    </div>
+    <div class="watch">
+      <div class="w"><h3>Search term performance</h3><p>What people actually typed, reconciled against real orders — not last-click noise.</p></div>
+      <div class="w"><h3>Search query performance (SQP)</h3><p>Your share of impressions, clicks and purchases per query, week over week — the leading indicator before rank moves.</p></div>
+      <div class="w"><h3>Keyword ranking</h3><p>Organic position by term, and whether paid pressure is actually moving it.</p></div>
+      <div class="w"><h3>Profitability</h3><p>Contribution profit after referral fees, FBA, storage and returns — not ACoS pretending to be profit.</p></div>
+      <div class="w"><h3>Placement &amp; dayparting</h3><p>Top-of-search versus rest-of-search economics, bid to your own hourly order curve.</p></div>
+      <div class="w"><h3>Listing health</h3><p>Suppressions, buy box loss, stockouts — and spend paused the moment traffic points at a dead page.</p></div>
+      <div class="w"><h3>Catalog-level goals</h3><p>Hero SKUs, launches and long-tail treated differently, because they are different.</p></div>
+      <div class="w"><h3>New-to-brand</h3><p>Whether you're buying growth or re-buying customers you already had.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTONOMY LADDER -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Honesty / 06</p>
+      <h2>What he does alone — and what he never does.</h2>
+      <p>Everyone in this category says "autonomous" and nobody defines it. So here's ours, in public. The right-hand column applies at <strong style="color:var(--fg)">every</strong> approval level, including Level 3 — these are not permissions you can switch on.</p>
+    </div>
+    <div class="ladder">
+      <div class="lcol auto"><h3>Runs unattended</h3><ul>
+        <li>Harvests converting search terms into exact-match ad groups</li>
+        <li>Adds negatives for terms burning clicks with no orders</li>
+        <li>Moves bids toward each product's profit goal, within guardrails</li>
+        <li>Shifts budget off capped, unprofitable ad groups</li>
+        <li>Pauses ad groups that have gone cold</li>
+        <li>Flags listing suppressions and stops spend on dead pages</li>
+        <li>Adjusts by placement and by hour against your own order curve</li>
+      </ul></div>
+      <div class="lcol human"><h3>Always needs a human</h3><ul>
+        <li>Anything touching inventory risk — he doesn't know your container is late</li>
+        <li>Launching a new product or entering a new category</li>
+        <li>Large budget changes outside the agreed band</li>
+        <li>Pricing and promotion decisions</li>
+        <li>Seasonal patterns he hasn't seen before</li>
+        <li>Creative and listing changes</li>
+        <li>Deciding what "profitable" means for your business</li>
+      </ul></div>
+    </div>
+    <p class="mono dim" style="font-size:12.5px;margin-top:20px;max-width:70ch">If a vendor won't show you this table, ask them why.</p>
+  </div>
+</section>
+
+<!-- ORBIT INCLUDED -->
+<section id="orbit">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Orbit, included / 07</p>
+      <h2>The whole software suite comes with him. Free.</h2>
+      <p>Dr. PPC lives inside <strong style="color:var(--fg)">Orbit</strong> — Full Circle's full Amazon software suite. Sales, advertising, search terms, keywords, traffic, inventory, finance, ASIN-level profit, and a set of trackers that watch your BSR, buy box, price and fee changes for you. This is software other companies charge a monthly subscription for. With Dr. PPC it is included at no extra cost.</p>
+    </div>
+
+    <div class="shot-scroll">
+      <div class="shot">
+        <picture>
+          <source srcset="assets/orbit-campaign-analytics.webp" type="image/webp" />
+          <img src="assets/orbit-campaign-analytics.jpg" width="1720" height="923" loading="lazy" decoding="async" alt="Orbit Campaign Analytics: total spend donut, a performance table broken out by match type and campaign type with clicks, CTR, CPC, CPA, spend, sales, ACoS and profit, and a Campaign Profitability Map plotting estimated profit against ad spend with bubbles coloured by ACoS band." />
+        </picture>
+      </div>
+    </div>
+    <p class="shot-cap">Orbit → Advertising → Campaign Analytics. Live product screenshot; account identity removed. <span class="swipe-hint">Swipe to see the full view →</span></p>
+
+    <p style="margin-top:34px;max-width:74ch;color:var(--dim);font-size:16px">That bubble chart is the part most tools don't give you: every campaign plotted as estimated profit against ad spend, coloured by ACoS band, with a break-even line drawn across it. Campaigns sitting under that line are the ones Dr. PPC writes proposals about the next morning.</p>
+
+    <p class="kicker" style="margin-top:48px">What's in the suite</p>
+    <div class="orbit-grid">
+      <div class="mod">
+        <div class="g">Sales &amp; analytics</div>
+        <ul>
+          <li>Sales<span>Revenue, units and trend by marketplace</span></li>
+          <li>Keywords<span>Rank tracking by term, paid versus organic</span></li>
+          <li>Traffic<span>Sessions, conversion and where they came from</span></li>
+          <li>Inventory<span>Cover, velocity and stockout risk</span></li>
+          <li>Finance<span>Fees, reimbursements and contribution profit</span></li>
+          <li>ASINs<span>Per-product economics down to the SKU</span></li>
+        </ul>
+      </div>
+      <div class="mod">
+        <div class="g">Advertising</div>
+        <ul>
+          <li>PPC Analytics<span>Spend, sales, ACoS, TACoS, RoAS and the hourly day trail</span></li>
+          <li>Search Terms<span>Every term with an opportunity score and true profit</span></li>
+          <li>Campaign Analytics<span>Match type, campaign type and the profitability map</span></li>
+          <li>Live Tracker<span>Today's spend as it happens, hour by hour</span></li>
+          <li>Dr PPC™ Console<span>The analysis, the proposals and the decision log</span></li>
+        </ul>
+      </div>
+      <div class="mod">
+        <div class="g">Trackers &amp; alerts</div>
+        <ul>
+          <li>BSR Tracker<span>Best-seller rank movement by ASIN</span></li>
+          <li>BuyBox Tracker<span>Ownership and loss events</span></li>
+          <li>Price Tracker<span>Yours and the competition's</span></li>
+          <li>Fee Tracker<span>Amazon fee changes before they surprise you</span></li>
+          <li>Alerts &amp; notifications<span>Suppressions, stockouts and spend anomalies</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="kicker" style="margin-top:48px">PPC Analytics — the top line, every morning</p>
+    <div class="kpis" style="margin-top:16px">
+      <div class="kpi"><div class="k">Ad spend</div><div class="v">$13,531</div></div>
+      <div class="kpi"><div class="k">Ad sales</div><div class="v">$32,251</div></div>
+      <div class="kpi"><div class="k">Total sales</div><div class="v">$74,904</div></div>
+      <div class="kpi"><div class="k">ACoS</div><div class="v">42.0%</div></div>
+      <div class="kpi"><div class="k">TACoS</div><div class="v good">18.1%</div></div>
+      <div class="kpi"><div class="k">RoAS</div><div class="v good">2.38x</div></div>
+    </div>
+
+    <p class="kicker" style="margin-top:40px">Search Terms — scored, not just listed</p>
+    <div class="tablewrap stmini" style="margin-top:16px"><table>
+      <thead><tr><th>Search term</th><th>Opportunity</th><th>Match</th><th>Clicks</th><th>Spend</th><th>Sales</th><th>ACoS</th><th>Profit</th></tr></thead>
+      <tbody>
+        <tr><td>vitamin c face serum</td><td><span class="op hi">92 High</span></td><td>Exact</td><td>318</td><td>$291</td><td>$1,204</td><td>24.2%</td><td style="color:var(--accent)">$402</td></tr>
+        <tr><td>hydrating serum for dry skin</td><td><span class="op hi">88 High</span></td><td>Broad</td><td>204</td><td>$187</td><td>$742</td><td>25.2%</td><td style="color:var(--accent)">$241</td></tr>
+        <tr><td>face serum set</td><td><span class="op md">54 Watch</span></td><td>Phrase</td><td>96</td><td>$113</td><td>$248</td><td>45.6%</td><td style="color:var(--amber)">$18</td></tr>
+        <tr><td>serum sample free</td><td><span class="op lo">6 Waste</span></td><td>Broad</td><td>41</td><td>$37</td><td>$0</td><td>—</td><td style="color:var(--rose)">–$37</td></tr>
+        <tr><td>best serum 2026</td><td><span class="op lo">11 Waste</span></td><td>Broad</td><td>29</td><td>$34</td><td>$0</td><td>—</td><td style="color:var(--rose)">–$34</td></tr>
+      </tbody>
+    </table></div>
+    <p class="shot-cap">Representative rows from the Search Terms view. Illustrative example data — the real view runs to 200 rows a page with wasted-spend and average-CPC cards above it.</p>
+
+    <div class="free-band">
+      <h3>Included, not upsold.</h3>
+      <p>Orbit comes with Dr. PPC at no additional charge — there is no separate software line on the invoice, no per-seat pricing and no tier you have to upgrade into to see your own profit numbers. You keep access to every module listed above for as long as Dr. PPC is on the account.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THIRD CATEGORY -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">The third category / 08</p>
+      <h2>You've had two bad options. This is the third.</h2>
+      <p>Software hands you a dashboard and wishes you luck. An agency hands you a junior account manager and a monthly meeting. Dr. PPC is the thing in between that nobody was selling.</p>
+    </div>
+    <div class="tablewrap"><table>
+      <thead><tr><th></th><th>PPC software</th><th>Traditional agency</th><th class="us">Dr. PPC</th></tr></thead>
+      <tbody>
+        <tr><td>Who does the work</td><td>You do</td><td>A person, some of the time</td><td class="us">Fable 5, every day</td></tr>
+        <tr><td>Account touched</td><td>When you log in</td><td>Weekly at best</td><td class="us">Daily, every product</td></tr>
+        <tr><td>Who approves changes</td><td>You, manually</td><td>Them, told to you later</td><td class="us">Your choice of three levels</td></tr>
+        <tr><td>Reason for each change</td><td>A rule you wrote</td><td>Ask on the next call</td><td class="us">Written, with evidence</td></tr>
+        <tr><td>Typical cost</td><td>$100–500/mo + your hours</td><td>$2,000–5,000/mo retainer</td><td class="us">$300/mo + 3% of spend, capped</td></tr>
+        <tr><td>Price published?</td><td>Usually</td><td>Almost never</td><td class="us">On this page</td></tr>
+        <tr><td>Human expertise</td><td>None included</td><td>Varies with who's assigned</td><td class="us">Operators from a $500M+ team</td></tr>
+        <tr><td>Commitment</td><td>Annual contract</td><td>6–12 month contract</td><td class="us">Month-to-month</td></tr>
+        <tr><td>Software included</td><td>It is the software</td><td>Billed separately</td><td class="us">Full Orbit suite, free</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;margin:0 auto 40px">
+      <p class="kicker">Price / 09</p>
+      <h2>Published. Capped. Month-to-month.</h2>
+    </div>
+    <div class="price-card">
+      <div class="price-num">$300<small>/mo</small> + 3%<small> of ad spend</small></div>
+      <div class="price-terms"><span>Published — it's on this page</span><span>Capped</span><span>No contract</span><span>No onboarding fee</span></div>
+      <ul class="incl">
+        <li>Fable 5 working your account every day</li>
+        <li>A written strategy per product and for the catalog</li>
+        <li>Your choice of approval level — change it whenever you like</li>
+        <li>Every change logged with evidence, measurement and a rollback trigger</li>
+        <li>Operators from a $500M+ Amazon team supervising</li>
+        <li>Full account diagnosis on day one</li>
+        <li><strong style="color:var(--fg)">The complete Orbit software suite, free</strong></li>
+        <li>Weekly plain-English reporting</li>
+        <li>Leave whenever you want</li>
+      </ul>
+      <div style="margin-top:32px">
+        <a class="btn" href="#demo" data-cta="pricing">Book a demo call →</a>
+        <span class="btn-sub">First 30 days free. Then the above.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap narrow">
+    <div class="section-head"><p class="kicker">Questions / 10</p><h2>The things people actually ask.</h2></div>
+    <div class="faq">
+      <details open><summary>What happens in the first 30 days?</summary><p>Dr. PPC diagnoses the account, writes the strategy per product, fixes what's obviously broken, and starts the daily loop. Most brands start at Level 1 so they can read every proposal before it ships. You see the weekly report and the full change log. You pay nothing. If it hasn't earned the second month by day 30, we shake hands and part ways.</p></details>
+      <details><summary>Can I keep approval on everything?</summary><p>Yes — that's Level 1, and plenty of accounts stay there. Dr. PPC still does all the analysis and writes every proposal; he just waits for your click before anything reaches Amazon. You can move to supervised or full autonomy later, or move back down, at any time and without renegotiating your agreement.</p></details>
+      <details><summary>If I go fully autonomous, what stops a bad day?</summary><p>Three things. Guardrails you set before he starts — target profitability, spend ceilings, protected SKUs. A rollback trigger attached to every individual change, so a move that doesn't perform is reversed automatically inside its measurement window. And the hard limits in the ladder above, which apply at every level: inventory risk, pricing, new launches and creative always come to a human, no matter what setting you're on.</p></details>
+      <details><summary>Is Orbit really included?</summary><p>Yes. The full suite — sales, advertising, search terms, keywords, traffic, inventory, finance, ASIN profitability, the BSR, buy box, price and fee trackers, and the Dr PPC Console itself — comes with the service at no additional charge. There is no separate software line on your invoice and no tier you have to buy up into to see your own numbers.</p></details>
+      <details><summary>Is this just a bid rule with a marketing name?</summary><p>No. A rules engine executes conditions you wrote. Fable 5 reads the whole account, writes a strategy per product against your economics, then acts on it — and logs the reasoning for every change so you can audit the thinking, not just the outcome.</p></details>
+      <details><summary>How do I know the ads caused the growth?</summary><p>Honestly: last-click attribution can't prove incrementality, and never could. What works is holding out a region or an ASIN set, comparing against a matched control, and reconciling in Amazon Marketing Cloud where DSP and sponsored ads stop double-counting. We'll show you the method before we show you a number.</p></details>
+      <details><summary>Is my account big enough?</summary><p>Dr. PPC fits brands doing roughly $500k a year and up on Amazon. Below that, the percentage is small enough that we probably aren't the highest-leverage thing you could buy — and we'll say so on the call.</p></details>
+      <details><summary>Do I lose control of my account?</summary><p>No. You keep ownership of everything, you choose the approval level, you can see every change and its reason, and the ladder above is the real boundary. Anything outside it comes to a human first.</p></details>
+      <details><summary>What does the 3% cap mean?</summary><p>The percentage stops growing past the cap no matter how large your ad spend gets. Scaling your business shouldn't quietly scale our invoice.</p></details>
+    </div>
+
+    <div style="margin-top:44px">
+      <p class="kicker">Showing the method</p>
+      <div class="shot-scroll" style="margin-top:16px">
+        <div class="shot">
+          <picture>
+            <source srcset="assets/orbit-incrementality.webp" type="image/webp" />
+            <img src="assets/orbit-incrementality.jpg" width="893" height="546" loading="lazy" decoding="async" alt="An incrementality workspace showing the proposition for an anonymised sports nutrition brand: every incremental order the account buys has to be worth $9.01 more, later, than it is today — with the margin arithmetic underneath and a button to measure the repeat rate." />
+          </picture>
+        </div>
+      </div>
+      <p class="shot-cap">Our incrementality workspace — the account reduced to the one number it actually turns on. Brand anonymised. <span class="swipe-hint">Swipe to see the full view →</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="demo" style="border-bottom:none">
+  <div class="wrap cta-final">
+    <p class="kicker">Start / 11</p>
+    <h2 style="margin-top:14px">Put Dr. PPC on your account.</h2>
+    <p class="lede" style="margin:18px auto 0">Twenty minutes. We'll look at your real account, show you the strategy Fable 5 writes for your top products, and let you pick the approval level you're comfortable with. The first 30 days are free either way — and Orbit comes with it.</p>
+    <div style="margin-top:30px">
+      <a class="btn" href="https://calendly.com/jayce-remktr/30min" data-cta="footer">Book a demo call →</a>
+      <span class="btn-sub">No contract. No onboarding fee. Cancel anytime.</span>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="flinks">
+    <a href="/agency-vs-software-vs-ai-managed/">Agency vs software vs AI-managed</a>
+    <a href="/learn/acos/what-is-a-good-acos/">What is a good ACoS?</a>
+    <a href="/glossary/tacos/">TACoS</a>
+    <a href="/statistics/new-to-brand-benchmarks/">New-to-brand benchmarks</a>
+  </div>
+  <div class="fine">
+    <strong style="color:var(--fg);font-family:var(--display)">Dr. PPC</strong> — an Orbit product, operated by the Full Circle group. Powered by Fable 5.<br />
+    Brands shown are companies our agency has worked with. Product screenshots are from Orbit with account identity removed; figures inside the console illustration are examples, not client data. Results vary by brand, category and starting point; nothing here is a guarantee of outcome. Dr. PPC is a character representing the system — the operators supervising him are real people.
+  </div>
+</div></footer>
+
+</body>
+</html>
