@@ -72,26 +72,32 @@
   }
 
   // ── place the inline CTAs ────────────────────────────────────────────────
+  // A missing article container only means we cannot place CTAs *between
+  // paragraphs*. It must NOT disable the popup or scroll tracking — a landing
+  // page with no <article> still needs both, and an early return here silently
+  // stripped the popup from the Dr. PPC homepage.
   var article = document.querySelector('[data-article], article, main');
-  if (!article) return;
-  var paras = Array.prototype.filter.call(
-    article.querySelectorAll('p'),
-    function (p) { return p.textContent.trim().length > 80 && !p.closest('.fc-cta'); }
-  );
-
   var placed = [];
-  function insertAfter(node, el) {
-    if (node && node.parentNode) { node.parentNode.insertBefore(el, node.nextSibling); placed.push(el); }
-  }
-  if (paras.length) {
-    insertAfter(paras[0], cta('after-first-paragraph'));
-    // Only add depth CTAs when the article is long enough that they land in
-    // distinct places — on a short page they would stack on top of each other.
-    if (paras.length >= 8) {
-      [[0.25, 'depth-25'], [0.50, 'depth-50'], [0.75, 'depth-75']].forEach(function (m) {
-        var i = Math.floor(paras.length * m[0]);
-        if (i > 0 && i < paras.length) insertAfter(paras[i], cta(m[1]));
-      });
+
+  if (article) {
+    var paras = Array.prototype.filter.call(
+      article.querySelectorAll('p'),
+      function (p) { return p.textContent.trim().length > 80 && !p.closest('.fc-cta'); }
+    );
+
+    var insertAfter = function (node, el) {
+      if (node && node.parentNode) { node.parentNode.insertBefore(el, node.nextSibling); placed.push(el); }
+    };
+    if (paras.length) {
+      insertAfter(paras[0], cta('after-first-paragraph'));
+      // Only add depth CTAs when the article is long enough that they land in
+      // distinct places — on a short page they would stack on top of each other.
+      if (paras.length >= 8) {
+        [[0.25, 'depth-25'], [0.50, 'depth-50'], [0.75, 'depth-75']].forEach(function (m) {
+          var i = Math.floor(paras.length * m[0]);
+          if (i > 0 && i < paras.length) insertAfter(paras[i], cta(m[1]));
+        });
+      }
     }
   }
 
