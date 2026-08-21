@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dr. PPC — Fable 5 Runs Your Amazon Ads. Built On $500M+ Of Managed Revenue.</title>
-<meta name="description" content="Dr. PPC is an autonomous Amazon ad management system powered by Fable 5, built on the proprietary playbooks of an agency that has managed $500M+ for brands like HexClad, Ridge, BK Beauty and Beardbrand. You choose the approval level. Orbit software included free. $300/mo + 3% of ad spend. First 30 days free." />
+<meta name="description" content="Dr. PPC is an autonomous Amazon ad management system powered by Fable 5, built on the proprietary playbooks of an agency that has managed $500M+ for…" />
 <link rel="canonical" href="https://drppc.ai/" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta property="og:type" content="website" />
@@ -45,7 +45,7 @@
 <style>
 :root{
   --base:#08060f; --raised:#0e0b1a; --fg:#f4f4f6; --dim:#9a97a8; --line:#221e33;
-  --accent:#00ff9d; --cyan:#00e5ff; --amber:#f59e0b; --rose:#f4718b;
+  --accent:#00ff9d; --accent-rgb:0,255,157; --cyan:#00e5ff; --amber:#f59e0b; --rose:#f4718b;
   --display:'Archivo',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',monospace;
 }
 *{box-sizing:border-box;}
@@ -73,14 +73,14 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;padd
 .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(244,244,246,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(244,244,246,.035) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 30% 25%,#000 35%,transparent 100%);mask-image:radial-gradient(ellipse 80% 70% at 30% 25%,#000 35%,transparent 100%);}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:64px 22px 68px;}
 @media(max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:34px;padding-top:44px;}}
-.free-pill{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(0,255,157,.35);background:rgba(0,255,157,.06);padding:6px 14px;border-radius:100px;margin-bottom:22px;}
+.free-pill{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(var(--accent-rgb),.35);background:rgba(var(--accent-rgb),.06);padding:6px 14px;border-radius:100px;margin-bottom:22px;}
 .lede{font-size:18.5px;color:var(--dim);max-width:54ch;margin-top:20px;}
 .btn{display:inline-block;background:var(--accent);color:var(--base);font-weight:800;font-size:16.5px;padding:15px 30px;border-radius:9px;text-decoration:none;transition:filter .15s;}
 .btn:hover{filter:brightness(1.12);}
 .btn-sub{display:block;margin-top:12px;font-family:var(--mono);font-size:12.5px;color:var(--dim);}
 .doc-frame{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5);}
 .doc-frame video{display:block;width:100%;height:auto;}
-.doc-badge{position:absolute;left:14px;bottom:14px;right:14px;background:rgba(8,6,15,.82);backdrop-filter:blur(8px);border:1px solid rgba(0,255,157,.25);border-radius:11px;padding:12px 14px;}
+.doc-badge{position:absolute;left:14px;bottom:14px;right:14px;background:rgba(8,6,15,.82);backdrop-filter:blur(8px);border:1px solid rgba(var(--accent-rgb),.25);border-radius:11px;padding:12px 14px;}
 .doc-badge .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);}
 .doc-badge .t{font-family:var(--display);font-weight:700;font-size:15.5px;margin-top:3px;}
 .doc-badge .s{font-size:12px;color:var(--dim);margin-top:2px;}
@@ -123,7 +123,7 @@ section{padding:80px 0;border-bottom:1px solid var(--line);}
 .ladder{display:grid;gap:16px;grid-template-columns:1fr 1fr;}
 @media(max-width:720px){.ladder{grid-template-columns:1fr;}}
 .lcol{border:1px solid var(--line);border-radius:13px;padding:26px;background:var(--raised);}
-.lcol.auto{border-color:rgba(0,255,157,.3);}
+.lcol.auto{border-color:rgba(var(--accent-rgb),.3);}
 .lcol h3{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;}
 .lcol.auto h3{color:var(--accent);} .lcol.human h3{color:var(--amber);}
 .lcol ul{margin:16px 0 0;padding:0;list-style:none;}
@@ -137,7 +137,7 @@ table{width:100%;border-collapse:collapse;font-size:15px;}
 th,td{padding:15px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
 thead th{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:500;}
 thead th.us{color:var(--accent);}
-td.us{background:rgba(0,255,157,.045);font-weight:500;}
+td.us{background:rgba(var(--accent-rgb),.045);font-weight:500;}
 td:first-child{color:var(--dim);font-family:var(--mono);font-size:12.5px;}
 tbody tr:last-child td{border-bottom:none;}
 
@@ -145,7 +145,7 @@ tbody tr:last-child td{border-bottom:none;}
 .shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--raised);box-shadow:0 26px 70px rgba(0,0,0,.45);}
 .shot img{display:block;width:100%;height:auto;}
 .shot-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
-.shot-cap{font-family:var(--mono);font-size:11.5px;color:#6d6a7c;margin-top:11px;letter-spacing:.03em;}
+.shot-cap{font-family:var(--mono);font-size:11.5px;color:#8b8898;margin-top:11px;letter-spacing:.03em;}
 .swipe-hint{display:none;}
 @media(max-width:760px){
   .shot-scroll .shot{min-width:900px;}
@@ -162,7 +162,7 @@ tbody tr:last-child td{border-bottom:none;}
 .badge{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);border:1px solid rgba(245,158,11,.35);background:rgba(245,158,11,.08);padding:5px 11px;border-radius:100px;white-space:nowrap;}
 .tabs{display:flex;gap:6px;flex-wrap:wrap;padding:12px 16px 0;}
 .tabs button{font-family:var(--mono);font-size:12px;color:var(--dim);background:transparent;border:1px solid var(--line);border-radius:8px 8px 0 0;border-bottom:none;padding:9px 15px;cursor:pointer;}
-.tabs button.on{color:var(--accent);background:rgba(0,255,157,.06);border-color:rgba(0,255,157,.3);}
+.tabs button.on{color:var(--accent);background:rgba(var(--accent-rgb),.06);border-color:rgba(var(--accent-rgb),.3);}
 .pane{padding:22px 16px 24px;border-top:1px solid var(--line);margin-top:-1px;}
 .update{border-left:2px solid var(--accent);padding:2px 0 2px 18px;max-width:74ch;}
 .update .stamp{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);}
@@ -174,9 +174,9 @@ tbody tr:last-child td{border-bottom:none;}
 .tag{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:5px;border:1px solid var(--line);color:var(--dim);}
 .tag.act{color:var(--cyan);border-color:rgba(0,229,255,.32);background:rgba(0,229,255,.06);}
 .tag.wait{color:var(--amber);border-color:rgba(245,158,11,.32);background:rgba(245,158,11,.07);}
-.tag.done{color:var(--accent);border-color:rgba(0,255,157,.32);background:rgba(0,255,157,.07);}
+.tag.done{color:var(--accent);border-color:rgba(var(--accent-rgb),.32);background:rgba(var(--accent-rgb),.07);}
 .prop h4{font-family:var(--display);font-size:17px;font-weight:700;margin:0 0 12px;letter-spacing:-.01em;line-height:1.3;}
-.prop h4 code{font-family:var(--mono);font-size:15px;color:var(--accent);background:rgba(0,255,157,.08);padding:1px 6px;border-radius:5px;}
+.prop h4 code{font-family:var(--mono);font-size:15px;color:var(--accent);background:rgba(var(--accent-rgb),.08);padding:1px 6px;border-radius:5px;}
 .rows{display:grid;gap:9px;margin:0 0 16px;}
 .row{display:grid;grid-template-columns:118px 1fr;gap:14px;font-size:14px;align-items:start;}
 @media(max-width:560px){.row{grid-template-columns:1fr;gap:2px;}}
@@ -188,7 +188,7 @@ tbody tr:last-child td{border-bottom:none;}
 .approve,.reject{font-family:var(--mono);font-size:12.5px;font-weight:700;border-radius:7px;padding:10px 16px;border:1px solid;cursor:default;}
 .approve{background:var(--accent);color:var(--base);border-color:var(--accent);}
 .reject{background:transparent;color:var(--dim);border-color:var(--line);}
-.mock-note{font-family:var(--mono);font-size:11px;color:#6d6a7c;margin-left:auto;align-self:center;}
+.mock-note{font-family:var(--mono);font-size:11px;color:#8b8898;margin-left:auto;align-self:center;}
 
 /* ---------- approval levels ---------- */
 .levels{display:grid;gap:16px;grid-template-columns:repeat(3,1fr);}
@@ -228,14 +228,14 @@ tbody tr:last-child td{border-bottom:none;}
 .stmini th,.stmini td{padding:11px 13px;white-space:nowrap;}
 .stmini td:first-child{color:var(--fg);font-family:var(--body);font-size:13.5px;}
 .op{font-family:var(--mono);font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px;}
-.op.hi{color:var(--accent);background:rgba(0,255,157,.1);}
+.op.hi{color:var(--accent);background:rgba(var(--accent-rgb),.1);}
 .op.md{color:var(--amber);background:rgba(245,158,11,.1);}
 .op.lo{color:var(--rose);background:rgba(244,113,139,.1);}
-.free-band{border:1px solid rgba(0,255,157,.28);background:linear-gradient(180deg,rgba(0,255,157,.06),rgba(14,11,26,.9));border-radius:14px;padding:26px 28px;margin-top:28px;}
+.free-band{border:1px solid rgba(var(--accent-rgb),.28);background:linear-gradient(180deg,rgba(var(--accent-rgb),.06),rgba(14,11,26,.9));border-radius:14px;padding:26px 28px;margin-top:28px;}
 .free-band h3{font-size:21px;margin-bottom:8px;}
 .free-band p{color:var(--dim);font-size:15px;margin:0;max-width:72ch;}
 
-.price-card{border:1px solid rgba(0,255,157,.28);border-radius:16px;background:linear-gradient(180deg,rgba(0,255,157,.05),rgba(14,11,26,.9));padding:40px;text-align:center;max-width:640px;margin:0 auto;}
+.price-card{border:1px solid rgba(var(--accent-rgb),.28);border-radius:16px;background:linear-gradient(180deg,rgba(var(--accent-rgb),.05),rgba(14,11,26,.9));padding:40px;text-align:center;max-width:640px;margin:0 auto;}
 .price-num{font-family:var(--display);font-size:clamp(36px,5.6vw,56px);font-weight:800;letter-spacing:-.03em;}
 .price-num small{font-size:19px;color:var(--dim);font-weight:600;}
 .price-terms{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin:22px 0 6px;}
@@ -252,7 +252,7 @@ tbody tr:last-child td{border-bottom:none;}
 .faq p{color:var(--dim);font-size:15.4px;margin:13px 0 0;max-width:70ch;}
 
 footer{padding:40px 0 60px;}
-footer .fine{font-family:var(--mono);font-size:11.5px;color:#6d6a7c;max-width:62ch;line-height:1.7;}
+footer .fine{font-family:var(--mono);font-size:11.5px;color:#8b8898;max-width:62ch;line-height:1.7;}
 footer .flinks{font-family:var(--mono);font-size:12px;margin-bottom:20px;display:flex;gap:18px;flex-wrap:wrap;}
 .cta-final{text-align:center;}
 </style>
@@ -269,6 +269,8 @@ nav.top ul{order:3;flex-basis:100%}
   <ul><li><a href="/learn/">Learn</a></li><li><a href="/compare/">Compare</a></li><li><a href="/statistics/">Statistics</a></li><li><a href="/answers/">Answers</a></li></ul>
   <a class="navcta" href="#demo" data-cta="nav">Book a Dr. PPC demo →</a>
 </div></nav>
+
+<main data-article>
 
 <!-- HERO -->
 <header class="hero">
@@ -429,7 +431,7 @@ nav.top ul{order:3;flex-basis:100%}
               <div class="row rb"><dt>Rollback</dt><dd>Budget returns to the original split if destination ACoS rises above <b>45% for 3 consecutive days</b>.</dd></div>
             </dl>
             <div class="actions">
-              <span class="reject" style="border-color:rgba(0,255,157,.3);color:var(--accent)">View in change log</span>
+              <span class="reject" style="border-color:rgba(var(--accent-rgb),.3);color:var(--accent)">View in change log</span>
               <span class="mock-note">Level 3 · applied inside guardrails, logged</span>
             </div>
           </div>
@@ -728,6 +730,8 @@ nav.top ul{order:3;flex-basis:100%}
 
 <style>
 </style>
+</main>
+
 <aside class="fc-family"><h3>The rest of the family</h3><ul><li><a href="https://drdsp.ai">Dr. DSP</a> — when sponsored ads have plateaued and you need reach</li><li><a href="https://drstock.ai">Dr. Stock</a> — when stockouts and fees are eating the margin</li><li><a href="https://fullcircleorbit.com">Orbit</a> — the software behind all three, included free</li><li><a href="https://fullcircleagency.com">Full Circle</a> — when you want the whole account run, not one function</li><li><a href="https://remktr.com">reMKTR</a> — Amazon DSP bought as a service rather than a product</li></ul></aside>
 <footer><div class="wrap">
   <div class="flinks">
