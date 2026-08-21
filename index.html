@@ -41,6 +41,7 @@
     });
   });
 </script>
+<link rel="stylesheet" href="/assets/site.css" />
 <style>
 :root{
   --base:#08060f; --raised:#0e0b1a; --fg:#f4f4f6; --dim:#9a97a8; --line:#221e33;
@@ -255,11 +256,17 @@ footer .fine{font-family:var(--mono);font-size:11.5px;color:#6d6a7c;max-width:62
 footer .flinks{font-family:var(--mono);font-size:12px;margin-bottom:20px;display:flex;gap:18px;flex-wrap:wrap;}
 .cta-final{text-align:center;}
 </style>
+<style>/* nav row must wrap once the section links are in it */
+nav.top .wrap{flex-wrap:wrap;gap:12px 18px}
+nav.top ul{order:3;flex-basis:100%}
+@media(min-width:860px){nav.top ul{order:0;flex-basis:auto}}
+</style>
 </head>
 <body>
 
 <nav class="top"><div class="wrap">
   <div class="logo">Dr. <span>PPC</span></div>
+  <ul><li><a href="/learn/acos/">ACoS</a></li><li><a href="/compare/">Compare</a></li><li><a href="/learn/ppc/">Playbook</a></li><li><a href="/statistics/">Statistics</a></li><li><a href="/answers/">Answers</a></li><li><a href="/library/">Library</a></li></ul>
   <a class="navcta" href="#demo" data-cta="nav">Book a demo →</a>
 </div></nav>
 
@@ -720,15 +727,6 @@ footer .flinks{font-family:var(--mono);font-size:12px;margin-bottom:20px;display
 
 
 <style>
-.fc-family{margin:44px 0 0;padding:22px 0 0;border-top:1px solid var(--line,#e6e4ee);
-font-size:13.5px;line-height:1.7}
-.fc-family h3{margin:0 0 10px;font-size:11px;text-transform:uppercase;
-letter-spacing:.13em;color:var(--dim,#5c5c6b);font-weight:600}
-.fc-family ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;
-grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
-.fc-family li{color:var(--dim,#5c5c6b)}
-.fc-family a{font-weight:650;text-decoration:none;color:var(--accent,#2dd4a7)}
-.fc-family a:hover{text-decoration:underline}
 </style>
 <aside class="fc-family"><h3>The rest of the family</h3><ul><li><a href="https://drdsp.ai">Dr. DSP</a> — when sponsored ads have plateaued and you need reach</li><li><a href="https://drstock.ai">Dr. Stock</a> — when stockouts and fees are eating the margin</li><li><a href="https://fullcircleorbit.com">Orbit</a> — the software behind all three, included free</li><li><a href="https://fullcircleagency.com">Full Circle</a> — when you want the whole account run, not one function</li><li><a href="https://remktr.com">reMKTR</a> — Amazon DSP bought as a service rather than a product</li></ul></aside>
 <footer><div class="wrap">
