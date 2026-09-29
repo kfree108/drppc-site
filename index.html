@@ -2305,7 +2305,7 @@ if(hasG&&!reduce){
   ScrollTrigger.create({trigger:'#app',start:'top 70%',once:true,onEnter:function(){ctl=consoleTl()}});
   $('#replay').addEventListener('click',function(){if(ctl)ctl.kill();gsap.set(['#prop','#prop h4','#prop .bidchg','#ev > div','#why','#safety span'],{clearProps:'all'});ctl=consoleTl()});
 
-  var skewTo=gsap.quickTo('.marquee .track','skewX',{duration:.4,ease:'power3'});
+  var skewTo=gsap.quickTo('.marquee','skewX',{duration:.4,ease:'power3'});
   ScrollTrigger.create({onUpdate:function(s){skewTo(gsap.utils.clamp(-8,8,s.getVelocity()/-250))}});
   gsap.from('.final h2',{scale:.86,duration:1.4,ease:'power3.out',scrollTrigger:{trigger:'.final',start:'top 75%'}});
   ScrollTrigger.addEventListener('refresh',buildSpine);
