@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Two-Lane Sorter: Split Your Amazon Search Terms into Branded and Non-Branded</title>
+<meta name="description" content="Free tool: drop in your Sponsored Products search term report and your brand name, and see branded vs non-branded ACoS side by side, so a healthy blended ACoS can&#x27;t hide your expensive campaigns." />
+<link rel="canonical" href="https://drppc.ai/free/two-lane-sorter/" />
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="The Two-Lane Sorter: Split Your Amazon Search Terms into Branded and Non-Branded" />
+<meta property="og:description" content="Free tool: drop in your Sponsored Products search term report and your brand name, and see branded vs non-branded ACoS side by side, so a healthy blended ACoS can&#x27;t hide your expensive campaigns." />
+<meta property="og:url" content="https://drppc.ai/free/two-lane-sorter/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/site.css" />
+<link rel="stylesheet" href="/free/tools.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" defer></script>
+</head>
+<body>
+<nav class="top"><div class="bar"><a class="logo" href="/">Dr.<span>PPC</span></a><ul><li><a href="/learn/">Learn</a></li><li><a href="/compare/">Compare</a></li><li><a href="/free/">Free tools</a></li><li><a href="/answers/">Answers</a></li></ul><a class="navcta" href="/#demo">Start free for 30 days</a></div></nav>
+<div class="wrap">
+  <div class="crumbs"><a href="/">Home</a> › <a href="/free/">Free tools</a> › <span>The Two-Lane Sorter</span></div>
+  <article>
+    <span class="kicker">Free tool</span>
+    <h1>The Two-Lane Sorter</h1>
+    <div class="meta">Updated 2026-10-22 · free, no sign-up · runs in your browser</div>
+    <div class="answer"><span class="lbl">How it works</span><p>Branded searches (anything with your brand name in it) and non-branded searches are different businesses. Blended into one ACoS, cheap branded sales hide expensive non-branded clicks. Drop in your search term report and your brand name, and this sorts every term into its lane and shows each lane’s own ACoS.</p></div>
+    <div class="tool" id="t-lanes">
+      <h2>Sort your search terms</h2>
+      <p class="dim">Sponsored Products search term report, as Excel or CSV. It stays in your browser: nothing is uploaded.</p>
+      <div class="field" style="margin-bottom:12px"><label for="l-brands">Your brand name, plus common misspellings (comma separated)</label><textarea id="l-brands" rows="2" placeholder="e.g. acme, acmee, acme co"></textarea></div>
+      <label class="drop" id="l-drop" for="l-file">Drop the report here, or <u>choose a file</u><input id="l-file" type="file" accept=".csv,.tsv,.txt,.xlsx,.xls" hidden></label>
+      <p class="note" id="l-status">No file yet.</p>
+      <div id="l-out"></div>
+    </div>
+    <div class="tool">
+      <h2>Quick math, no file</h2>
+      <p class="dim">Put in each lane’s spend and sales.<span class="ex">EXAMPLE</span></p>
+      <div class="fields"><div class="field"><label for="q-bs">Branded spend</label><div class="unit pre"><input id="q-bs" type="number" inputmode="decimal" step="any" value="1000"><span>$</span></div></div><div class="field"><label for="q-bv">Branded sales</label><div class="unit pre"><input id="q-bv" type="number" inputmode="decimal" step="any" value="10000"><span>$</span></div></div><div class="field"><label for="q-ns">Non-branded spend</label><div class="unit pre"><input id="q-ns" type="number" inputmode="decimal" step="any" value="3000"><span>$</span></div></div><div class="field"><label for="q-nv">Non-branded sales</label><div class="unit pre"><input id="q-nv" type="number" inputmode="decimal" step="any" value="7500"><span>$</span></div></div></div>
+      <div class="out" id="q-out"></div>
+    </div>
+    <section><h2>How to use it</h2><ol class="steps"><li>In Amazon Ads, download the Sponsored Products search term report for the last 30 days (ending a few days ago).</li><li>Type your brand name and its common misspellings, then drop the report in.</li><li>Read two numbers, not one: branded ACoS and non-branded ACoS.</li><li>Give each lane its own goal. Branded gets a tight one: it’s defense, so you show up when competitors bid on your name. Non-branded is judged on new customers and total sales, not ACoS alone.</li><li>Split the campaigns the same way: brand terms in their own campaigns, and your brand name as a negative everywhere else.</li></ol></section>
+    <section><h2>Good to know</h2><ul class="body"><li>Example: branded spends $1,000 for $10,000 (10%) and non-branded $3,000 for $7,500 (40%). Blended, that’s $4,000 on $17,500, about 23%. It looks great, but the growth lane is at 40%.</li><li>A term counts as branded when it contains one of the names you type, ignoring spaces and punctuation.</li><li>Search terms that appear in several campaigns are added together.</li></ul></section>
+    <div class="cta"><p>Dr. PPC keeps branded and non-branded in separate lanes, each with its own goal, so branded can’t hide anything.</p><a class="btn" href="/#demo">Start free for 30 days</a></div>
+  </article>
+</div>
+<footer><div class="wrap"><div class="fine">Dr. PPC is a product of <a href="https://fullcircleorbit.com">Orbit</a>, built inside a team that manages more than $500M in managed Amazon revenue. These tools run entirely in your browser: nothing you type or upload is sent anywhere. Figures marked EXAMPLE are illustrative.</div></div></footer>
+<link rel="stylesheet" href="/assets/engagement.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M4G8GYYYXE"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-M4G8GYYYXE');
+window.FC_CTA={ga4:'G-M4G8GYYYXE',brand:'dr-ppc',href:'https://calendly.com/jayce-remktr/30min',label:'Book a Dr. PPC demo',sub:'First 30 days free. Orbit included. No contract.',popup:{eyebrow:'Dr. PPC · by Full Circle',title:'Want this run on your own numbers?',body:'Send us the account and we will do this analysis on it — your wasted spend, your search terms, your structure — and show you what Dr. PPC would change first. You keep the read either way.',points:['What you get | A written read of your account and a per-product plan.','How long | Twenty minutes, on your numbers, not a slide deck.','Terms | Free. No card, no contract. Orbit included if you start.'],proof:'$500M+ in managed revenue across 100+ brands.',dismiss:'No thanks — I’m just comparing',label:'Get a free account read'}};</script>
+<script src="/assets/referral.js" defer></script>
+<script src="/assets/engagement.js" defer></script>
+<script src="/free/tools.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* Free Dr. PPC tools (drppc.ai/free/). Uses the site tokens from /assets/site.css. */
+.tool{margin:26px 0 30px;padding:22px 22px 20px;border:1px solid var(--line);border-radius:14px;background:var(--raised)}
+.tool h2{margin:0 0 4px;font-size:20px}
+.tool > p.dim{margin:0 0 16px;font-size:14px}
+.fields{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:0 0 16px}
+.field label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:0 0 6px}
+.field input,.field select,.tool textarea{width:100%;box-sizing:border-box;background:var(--base);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:9px 10px;font:500 15px var(--mono);font-variant-numeric:tabular-nums}
+.field input:focus,.field select:focus,.tool textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.field .unit{position:relative}
+.field .unit span{position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--muted);font:500 13px var(--mono);pointer-events:none}
+.field .unit.pre span{left:10px;right:auto}
+.field .unit.pre input{padding-left:22px}
+.out{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin:4px 0 0}
+.out div{background:var(--base);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.out b{display:block;font:700 24px var(--mono);color:var(--accent);font-variant-numeric:tabular-nums;line-height:1.15}
+.out span{display:block;font-size:12.5px;color:var(--dim);margin-top:4px;line-height:1.45}
+.out div.warn b{color:var(--amber)}
+.math{font:500 13.5px var(--mono);color:var(--dim);margin:12px 0 0;line-height:1.7;overflow-wrap:anywhere}
+.math em{font-style:normal;color:var(--fg)}
+.tool table{width:100%;border-collapse:collapse;font-size:14px}
+.tool th,.tool td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left}
+.tool th{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:600}
+.tool td.n,.tool th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tool tr.hit{background:rgba(var(--accent-rgb),.09)}
+.tool tr.hit td{font-weight:700}
+.tbl{max-height:520px;overflow:auto;border:1px solid var(--line);border-radius:10px}
+.tbl thead th{position:sticky;top:0;background:var(--raised)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0 0}
+.btn2{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:transparent;color:var(--fg);font:600 13px var(--body);padding:8px 12px;border-radius:8px;cursor:pointer;text-decoration:none}
+.btn2:hover{border-color:var(--accent);color:var(--accent)}
+.lane{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.lane div{background:var(--base);border:1px solid var(--line);border-radius:10px;padding:14px}
+.lane h3{margin:0 0 8px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.lane b{display:block;font:700 26px var(--mono);color:var(--fg)}
+.lane .acos{color:var(--accent)}
+.lane .bad{color:var(--amber)}
+.lane p{margin:6px 0 0;font-size:13px;color:var(--dim)}
+.drop{border:1px dashed var(--line);border-radius:10px;padding:16px;text-align:center;color:var(--dim);font-size:14px;margin:0 0 12px}
+.drop.on{border-color:var(--accent);color:var(--fg)}
+.note{font-size:12.5px;color:var(--dim);margin:12px 0 0;line-height:1.6}
+.ex{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--amber);border:1px solid currentColor;border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:2px}
+.toolgrid{list-style:none;padding:0;margin:18px 0;display:grid;gap:12px}
+.toolgrid a{display:block;border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--raised);text-decoration:none;color:var(--fg)}
+.toolgrid a:hover{border-color:var(--accent)}
+.toolgrid b{display:block;font-family:var(--display);font-size:18px}
+.toolgrid span{display:block;color:var(--dim);font-size:14px;margin-top:4px}
+.toolgrid code{font-family:var(--mono);color:var(--accent);font-size:12px}
+@media(max-width:640px){.tool{padding:18px 14px}.lane{grid-template-columns:1fr}.fields{grid-template-columns:1fr 1fr}}
