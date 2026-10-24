@@ -19,7 +19,7 @@
  *     brand:   'drppc',
  *     href:    'https://calendly.com/...',
  *     label:   'Book a demo call',
- *     sub:     'First 30 days free. No contract.',
+ *     sub:     'First 30 days for $1. No contract.',
  *     popup:   { title: '...', body: '...', label: '...' }
  *   };
  */
@@ -197,7 +197,7 @@
         (cfg.eyebrow ? '<p class="fc-pop-eyebrow">' + cfg.eyebrow + '</p>' : '') +
         '<h3 id="fc-pop-t">' + (cfg.title || 'Want this running your account?') + '</h3>' +
         '<p class="fc-pop-lede">' +
-          (cfg.body || 'Twenty minutes on your real numbers. First 30 days free.') + '</p>' +
+          (cfg.body || 'Twenty minutes on your real numbers. First 30 days for $1.') + '</p>' +
         pts +
         '<a class="fc-cta-btn" href="' + C.href + '" target="_blank" rel="noopener">' +
           (cfg.label || LABEL) + '</a>' +
