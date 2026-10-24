@@ -19,7 +19,7 @@
  *       {name:"Helium 10 Diamond", base:359, pct:2, note:"2% managed spend fee"},
  *       {name:"Teikametrics",      base:179, pct:3, over:10000},
  *       {name:"Quartile",          quote:true,      note:"no public price"},
- *       {name:"Dr. PPC", base:300, pct:3, cap:2500, us:true}
+ *       {name:"Dr. PPC", base:300, pct:2, us:true}
  *     ]
  *   };
  *
