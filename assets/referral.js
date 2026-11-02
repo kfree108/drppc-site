@@ -4,7 +4,8 @@
  * Affiliate links (publish.fullcircleagency.com/creators/go/...) land here with
  * ?ref=<link token>&code=<CREATOR CODE>. Both are kept for 60 days (last click
  * wins) and added to every link into Orbit (fullcircleorbit.com) when it is
- * clicked, so the signup that follows credits the creator. Price is unchanged.
+ * clicked, with utm_source=creator (Orbit ignores a ref without it), so the signup that
+ * follows credits the creator. Price is unchanged.
  */
 (function () {
   'use strict';
@@ -40,6 +41,8 @@
     if (!/(^|\.)fullcircleorbit\.com$/.test(url.hostname)) return;
     if (r.ref && !url.searchParams.has('ref')) url.searchParams.set('ref', r.ref);
     if (r.code && !url.searchParams.has('code')) url.searchParams.set('code', r.code);
+    // Orbit only credits a referral tagged by the affiliate program (ORB-1245).
+    if (!url.searchParams.has('utm_source')) url.searchParams.set('utm_source', 'creator');
     a.href = url.toString();
   }, true);
 })();
