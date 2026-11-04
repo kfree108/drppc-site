@@ -45,7 +45,11 @@
       return !!(v && Date.now() - v.at < 60 * 24 * 60 * 60 * 1000);
     } catch (e) { return false; }
   }
-  function isStart(a) { return a.hasAttribute('data-start') || /start for \$1/i.test(a.textContent || ''); }
+  function isStart(a) {
+    if (a.hasAttribute('data-start')) return true;
+    if (/\bstart\b[^$]{0,20}\$1\b/i.test(a.textContent || '')) return true;
+    return /^https:\/\/fullcircleorbit\.com\/signup/.test(a.href || '');
+  }
   function isOrbit(url) { return /(^|\.)fullcircleorbit\.com$/.test(url.hostname); }
   function carry(url) {
     Object.keys(saved).forEach(function (k) { if (!url.searchParams.has(k)) url.searchParams.set(k, saved[k]); });
