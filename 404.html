@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Dr. PPC</title>
+<meta property="og:title" content="Dr. PPC: your Amazon ads, run every day">
+<meta property="og:description" content="First 30 days for $1.">
+<meta property="og:site_name" content="Dr. PPC">
+<meta name="theme-color" content="#14161f">
+<script>
+/*
+ * Short partner links: drppc.ai/<code> (for example drppc.ai/maya10).
+ * This site is static, so a partner's short link arrives here as a page that does not exist.
+ * A single path segment of 3-24 letters and digits is treated as a partner code and sent to
+ * the partner program, which counts the click and forwards to Orbit with the partner's code,
+ * exactly as the long link does. An unknown code comes back to the home page.
+ * Anything else is a normal "page not found".
+ */
+(function () {
+  var m = /^\/([A-Za-z0-9]{3,24})\/?$/.exec(location.pathname);
+  if (m) location.replace('https://publish.fullcircleagency.com/creators/code/' + m[1].toUpperCase());
+  else document.documentElement.className = 'missing';
+})();
+</script>
+<style>
+  html, body { height: 100%; margin: 0; background: #14161f; color: #f3f1ea; font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; box-sizing: border-box; }
+  h1 { font-size: 28px; margin: 0 0 8px; letter-spacing: -0.01em; }
+  p { margin: 0 0 20px; color: #b9bccb; }
+  a { display: inline-block; padding: 12px 22px; border-radius: 10px; background: #e2b33c; color: #1a1405; font-weight: 700; text-decoration: none; }
+  .gone { display: none; } .missing .gone { display: block; } .missing .going { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <div class="going"><p>Taking you to Dr. PPC…</p></div>
+  <div class="gone">
+    <h1>That page isn’t here.</h1>
+    <p>The link may be old or mistyped.</p>
+    <a href="/">Go to Dr. PPC</a>
+  </div>
+  <noscript><p>Please turn on JavaScript, or go to the home page.</p><a href="/">Go to Dr. PPC</a></noscript>
+</main>
+</body>
+</html>
