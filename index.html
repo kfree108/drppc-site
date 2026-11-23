@@ -905,6 +905,17 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;background:var(--bg2
 .chart .bub circle{animation:bfl 7s ease-in-out infinite}
 @keyframes bfl{50%{transform:translateY(-4px)}}
 @media (max-width:860px){.od-panels{min-height:0}.od-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.od-tabs::-webkit-scrollbar{display:none}.od-tabs button{flex:none;white-space:nowrap}}
+
+/* LAUNCH FILM (2026-11-23, Ken: "add it to drppc.ai") */
+.film .film-frame{position:relative;margin-top:clamp(28px,4vw,48px);border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#000;aspect-ratio:16/9;box-shadow:0 50px 120px -50px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.04)}
+.film video{display:block;width:100%;height:100%;object-fit:cover;background:#000}
+.film-play{position:absolute;inset:0;margin:auto;width:104px;height:104px;border-radius:50%;border:0;background:var(--g);color:#04140d;display:grid;place-items:center;cursor:pointer;box-shadow:0 0 0 14px rgba(255,255,255,.08),0 24px 70px -12px var(--g-glow);transition:transform .2s ease}
+.film-play:hover,.film-play:focus-visible{transform:scale(1.07)}
+.film-play svg{width:38px;height:38px;margin-left:6px}
+.film-frame.playing .film-play{display:none}
+.film-len{position:absolute;left:16px;top:14px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.6);padding:7px 11px;border-radius:999px;pointer-events:none}
+.film-frame.playing .film-len{display:none}
+@media (max-width:640px){.film-play{width:76px;height:76px}.film-play svg{width:28px;height:28px}.film .film-frame{border-radius:14px}}
 </style>
 
 <!-- carried over from the previous live page -->
@@ -1021,6 +1032,25 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;background:var(--bg2
     </div>
   </div>
   <div class="hero-strip" aria-hidden="true"><canvas data-ecg data-speed="160" data-bpm="60" data-amp=".9" data-line="1.4"></canvas><span class="scroll-cue">Scroll to begin the exam</span></div>
+</section>
+
+<!-- LAUNCH FILM -->
+<section class="sec film" id="watch" aria-labelledby="watch-h">
+  <div class="wrap">
+    <div class="eyebrow"><span class="idx">&#9654;</span>The launch film &middot; 2:44</div>
+    <h2 id="watch-h">Meet Dr. PPC <em>in under three minutes.</em></h2>
+    <p class="lede">Ken Freeman, founder of Full Circle, shows how it works: you set the strategy, goals and budget, and Dr. PPC does the work to hit them, every single day.</p>
+    <div class="film-frame">
+      <video id="launchFilm" controls playsinline preload="none" poster="assets/drppc-launch-poster.jpg" width="1920" height="1080" aria-label="Dr. PPC launch film with Ken Freeman">
+        <source src="assets/drppc-launch.mp4" type="video/mp4">
+      </video>
+      <button class="film-play" type="button" aria-label="Play the Dr. PPC launch film"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></button>
+      <span class="film-len">2:44 &middot; sound on</span>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-primary mag" href="https://fullcircleorbit.com/signup?from=drppc" data-film-cta>Start your first 30 days for $1 <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
 </section>
 
 <!-- TRAINING -->
@@ -2374,5 +2404,16 @@ if(reduce){var v=$('.portrait video');if(v){v.removeAttribute('autoplay');try{v.
 })();
 </script>
 <script src="/assets/orbit-funnel.js" defer></script>
+<script>
+/* launch film: play button + GA4 events (vsl_play, vsl_progress 25/50/75, vsl_complete, vsl_cta_click) */
+(function(){var f=document.querySelector('#watch .film-frame');if(!f)return;var v=f.querySelector('video'),b=f.querySelector('.film-play'),sent={};
+function ev(n,p){try{gtag('event',n,Object.assign({video:'launch-film'},p||{}));}catch(e){}}
+b.addEventListener('click',function(){var p=v.play();if(p&&p.catch)p.catch(function(){});});
+v.addEventListener('play',function(){f.classList.add('playing');if(!sent.play){sent.play=1;ev('vsl_play');}});
+v.addEventListener('timeupdate',function(){if(!v.duration)return;var q=Math.floor(v.currentTime/v.duration*4);for(var k=1;k<=3;k++){if(q>=k&&!sent['q'+k]){sent['q'+k]=1;ev('vsl_progress',{percent:k*25});}}});
+v.addEventListener('ended',function(){ev('vsl_complete');});
+document.querySelectorAll('[data-film-cta]').forEach(function(a){a.addEventListener('click',function(){ev('vsl_cta_click');});});})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Dr. PPC launch film","description":"Ken Freeman, founder of Full Circle, introduces Dr. PPC: you set the strategy, goals and budget, and Dr. PPC runs your Amazon ads every day to hit them.","thumbnailUrl":"https://drppc.ai/assets/drppc-launch-poster.jpg","uploadDate":"2026-11-23","duration":"PT2M44S","contentUrl":"https://drppc.ai/assets/drppc-launch.mp4","embedUrl":"https://drppc.ai/#watch"}</script>
 </body>
 </html>
