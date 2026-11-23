@@ -42,7 +42,9 @@
   function hasCreatorReferral() {
     try {
       var v = JSON.parse(localStorage.getItem('fc-creator-referral') || 'null');
-      return !!(v && Date.now() - v.at < 60 * 24 * 60 * 60 * 1000);
+      // No age limit (Ken 2026-11-23: partner codes never expire). Must match referral.js, or after 60 days
+      // the Start buttons got utm_source=drppc.ai and referral.js (which never overwrites utm_source) lost the creator credit.
+      return !!(v && (v.ref || v.code));
     } catch (e) { return false; }
   }
   function isStart(a) {
