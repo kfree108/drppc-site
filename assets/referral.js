@@ -2,7 +2,8 @@
  * referral.js — carries a Full Circle affiliate referral from drppc.ai into Orbit.
  *
  * Affiliate links (publish.fullcircleagency.com/creators/go/...) land here with
- * ?ref=<link token>&code=<CREATOR CODE>. Both are kept for 60 days (last click
+ * ?ref=<link token>&code=<CREATOR CODE>. Both are kept with no expiry (Ken
+ * 2026-11-23: "I don't want codes to expire"); a newer partner link replaces them (last click
  * wins) and added to every link into Orbit (fullcircleorbit.com) when it is
  * clicked, with utm_source=creator (Orbit ignores a ref without it), so the signup that
  * follows credits the creator. Price is unchanged.
@@ -10,14 +11,13 @@
 (function () {
   'use strict';
   var KEY = 'fc-creator-referral';
-  var MAX_AGE = 60 * 24 * 60 * 60 * 1000;
   var REF = /^[A-Za-z0-9_-]{4,64}$/;
   var CODE = /^[A-Z0-9]{3,24}$/;
 
   function read() {
     try {
       var v = JSON.parse(localStorage.getItem(KEY) || 'null');
-      if (v && Date.now() - v.at < MAX_AGE) return v;
+      if (v && (v.ref || v.code)) return v;
     } catch (e) { /* storage blocked */ }
     return null;
   }
