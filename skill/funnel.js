@@ -21,7 +21,7 @@
   var LEAD_KEY = 'fc_hormozi_lead';
   var AUDIT_KEY = 'drppc_audit';
   var SPEND = { 'Under $5K a month': 2500, '$5K to $10K a month': 7500, '$10K to $50K a month': 25000, '$50K + a month': 75000 };
-  var REVENUE = { 'Under $500K': 250000, '$500K to $1M': 750000, '$1M to $5M': 3000000, '$5M to $20M': 12500000, '$20 Million +': 20000000 };
+  var REVENUE = { 'Under $250K': 125000, '$250K to $500K': 375000, 'Under $500K': 250000, '$500K to $1M': 750000, '$1M to $5M': 3000000, '$5M to $20M': 12500000, '$20 Million +': 20000000 };
 
   var isLocal = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
   var base = (window.FC_REMARKETING_ENDPOINT || ENDPOINT || (isLocal ? 'http://127.0.0.1:8788' : '')).replace(/\/+$/, '');
@@ -68,7 +68,7 @@
       monthly_ad_spend_band: lead.monthly_amazon_ad_spend || '', annual_revenue_band: lead.annual_amazon_revenue || '',
       biggest_ppc_bottleneck: lead.biggest_ppc_bottleneck || '',
       consent: !!lead.consent, consent_version: lead.consent_version || '',
-      source: 'hormozi_skill_funnel', offer: 'hero-asin-architect', code: 'FOUNDER10',
+      source: 'hormozi_skill_funnel', funnel_variant: lead.funnel_variant || 'self_serve', offer: 'hero-asin-architect', code: 'FOUNDER10',
       event_id: eventId, fbp: cookie('_fbp'), fbc: cookie('_fbc'), gclid: l.gclid || '',
       utm_source: l.utm_source || '', utm_medium: l.utm_medium || '', utm_campaign: l.utm_campaign || '', utm_content: l.utm_content || '',
       page_url: location.origin + location.pathname, submitted_at: lead.submitted_at || new Date().toISOString()
@@ -83,8 +83,8 @@
       var id = newId('lead');
       lead.event_id = id;
       try { sessionStorage.setItem(LEAD_KEY, JSON.stringify(lead)); } catch (e) { /* storage blocked */ }
-      fb('Lead', { content_name: 'Hero ASIN Architect Skill', content_category: 'Claude Code PPC Skill' }, false, id);
-      ga('generate_lead', { method: 'hero_asin_skill_form' });
+      fb('Lead', { content_name: lead.content_name || 'Hero ASIN Architect Skill', content_category: 'Claude Code PPC Skill' }, false, id);
+      ga('generate_lead', { method: 'hero_asin_skill_form', funnel_variant: lead.funnel_variant || 'self_serve' });
       saveAudit();
       return post('/api/lead', forServer(lead, id));
     },
