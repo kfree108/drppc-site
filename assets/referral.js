@@ -40,7 +40,7 @@
     try { url = new URL(a.href); } catch (err) { return; }
     if (!/(^|\.)fullcircleorbit\.com$/.test(url.hostname)) return;
     if (r.ref && !url.searchParams.has('ref')) url.searchParams.set('ref', r.ref);
-    if (r.code && !url.searchParams.has('code')) url.searchParams.set('code', r.code);
+    if (r.code && (!url.searchParams.has('code') || url.searchParams.get('code') === 'FOUNDER10')) url.searchParams.set('code', r.code);
     // Orbit only credits a referral tagged by the affiliate program (ORB-1245).
     if (!url.searchParams.has('utm_source')) url.searchParams.set('utm_source', 'creator');
     a.href = url.toString();

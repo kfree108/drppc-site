@@ -245,5 +245,138 @@
     });
   }
 
-  document.addEventListener('DOMContentLoaded', function () { rule(); bid(); stack(); lanes(); lag(); });
+  /* ---------- 6. Optional Email-Capture Bar (Export + Hero ASIN Campaign Build) ---------- */
+  function heroAsinBuildText(toolName) {
+    return [
+      'FULL CIRCLE — HERO ASIN CAMPAIGN BUILD SOP',
+      'Built from $500M+ in managed Amazon revenue · drppc.ai/free/',
+      '====================================================================',
+      '',
+      '1. TWO-LANE ARCHITECTURE (NEVER BLEND BRANDED & NON-BRANDED)',
+      '   - Lane A (Branded Defense): Brand name + misspellings only. Tight ACoS target.',
+      '   - Lane B (Non-Branded Growth): Core root keywords in Exact, Phrase, and Auto/Broad.',
+      '   - Add your brand name as a Negative Phrase in every Non-Branded campaign.',
+      '',
+      '2. THE 3-NUMBER BID FORMULA (SET BEFORE LAUNCH)',
+      '   - Break-even ACoS = (Price - COGS - Freight - Referral - FBA - Storage - Returns) / Price',
+      '   - Max Click Ceiling = Price x Target ACoS x Conversion Rate',
+      '   - Base Bid = Max Click Ceiling / (1 + Top-of-Search Boost)',
+      '',
+      '3. BID STACK GUARDRAIL',
+      '   - Keep Dynamic Bidding on "Down Only" whenever Top-of-Search boost > +30%.',
+      '   - Price each placement off its own conversion rate (e.g., 12% ToS vs 4% PP = +200% boost, not +900%).',
+      '',
+      '4. THE 3x NEGATION RULE (95% STATISTICAL CONFIDENCE)',
+      '   - Clicks per order = 1 / Ad Conversion Rate.',
+      '   - Negate Exact after 3 x Clicks per Order with 0 orders (e.g. 30 clicks at 10% CVR).',
+      '   - Never negate a term with fewer clicks than your 3x line.',
+      '',
+      '5. COMPLETE ATTRIBUTION WINDOWS ONLY',
+      '   - Sponsored Products (Seller, 7-day attribution): judge 30-day windows ending 3 days ago.',
+      '   - Sponsored Brands & Sponsored Display (14-day attribution): judge 30-day windows ending 7 days ago.',
+      '   - Change one lever per campaign, cap bid moves at <=25%, log every change with a judge date.',
+      '',
+      '--------------------------------------------------------------------',
+      'Exported from: ' + (toolName || 'Dr. PPC Free Tools'),
+      'Want Dr. PPC running all 5 rules daily on your account?',
+      'Start for $1 (first 30 days), then $299/mo + 2% of ad spend — Orbit included.',
+      'Code FOUNDER10 for 10% off for life:',
+      'https://fullcircleorbit.com/signup?from=drppc&utm_source=creator&utm_medium=free_tools&code=FOUNDER10',
+      ''
+    ].join('\n');
+  }
+
+  function downloadText(name, text) {
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], { type: 'text/plain;charset=utf-8' }));
+    a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+
+  function exportCurrentTool() {
+    var rBtn = $('#r-csv'), bBtn = $('#b-csv'), lBtn = $('#l-csv'), gBtn = $('#g-csv');
+    if (rBtn) { rBtn.click(); return true; }
+    if (bBtn) { bBtn.click(); return true; }
+    if (lBtn) { lBtn.click(); return true; }
+    if (gBtn) { gBtn.click(); return true; }
+    if ($('#t-stack')) {
+      var base = num('s-base'), dyn = $('#s-dyn').value;
+      var places = [['tos', 'Top of search'], ['ros', 'Rest of search'], ['pp', 'Product pages']];
+      var out = [['Placement', 'Base bid', 'Placement boost %', 'Dynamic bidding', 'Max cost per click', 'Placement CVR %']];
+      places.forEach(function (pl) {
+        var b = num('s-' + pl[0]), up = dyn === 'updown' ? (pl[0] === 'tos' ? 2 : 1.5) : 1;
+        out.push([pl[1], base.toFixed(2), b + '%', dyn, (base * (1 + b / 100) * up).toFixed(2), num('s-cr-' + pl[0]) + '%']);
+      });
+      csv('dr-ppc-bid-stack.csv', out);
+      return true;
+    }
+    return false;
+  }
+
+  function captureBar() {
+    var bar = $('#cap-bar'); if (!bar) return;
+    var form = $('#cap-form', bar), input = $('#cap-email', bar), unlocked = $('#cap-unlocked', bar);
+    var toolSlug = bar.getAttribute('data-tool') || 'free-tools';
+    var toolName = bar.getAttribute('data-tool-name') || document.title;
+    var KEY = 'drppc_free_lead_email';
+
+    function showUnlocked(email) {
+      if (form) form.hidden = true;
+      if (unlocked) {
+        unlocked.hidden = false;
+        var msg = $('.cap-ok', unlocked);
+        if (msg && email) msg.textContent = 'Unlocked for ' + email + ' — download your Hero ASIN Campaign Build & export below.';
+      }
+    }
+
+    try {
+      var savedEmail = localStorage.getItem(KEY);
+      if (savedEmail) showUnlocked(savedEmail);
+    } catch (e) {}
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = (input && input.value || '').trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          if (input) input.focus();
+          return;
+        }
+        try { localStorage.setItem(KEY, email); } catch (err) {}
+        if (!navigator.globalPrivacyControl && typeof window.fbq === 'function') {
+          window.fbq('track', 'Lead', {
+            content_name: toolName + ' — Hero ASIN Campaign Build',
+            content_category: 'Free Amazon PPC Tools',
+            value: 0,
+            currency: 'USD'
+          });
+        }
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'generate_lead', {
+            method: 'free_tool_email_bar',
+            tool: toolSlug
+          });
+        }
+        showUnlocked(email);
+      });
+    }
+
+    var sopBtn = $('#cap-dl-sop', bar);
+    if (sopBtn) {
+      sopBtn.addEventListener('click', function () {
+        downloadText('full-circle-hero-asin-campaign-build.txt', heroAsinBuildText(toolName));
+      });
+    }
+    var expBtn = $('#cap-dl-results', bar);
+    if (expBtn) {
+      expBtn.addEventListener('click', function () {
+        if (!exportCurrentTool()) {
+          downloadText('full-circle-hero-asin-campaign-build.txt', heroAsinBuildText(toolName));
+        }
+      });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () { rule(); bid(); stack(); lanes(); lag(); captureBar(); });
 })();
+

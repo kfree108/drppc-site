@@ -54,10 +54,15 @@
   }
   function isOrbit(url) { return /(^|\.)fullcircleorbit\.com$/.test(url.hostname); }
   function carry(url) {
-    Object.keys(saved).forEach(function (k) { if (!url.searchParams.has(k)) url.searchParams.set(k, saved[k]); });
-    if (!url.searchParams.has('utm_source') && !hasCreatorReferral()) {
-      url.searchParams.set('utm_source', 'drppc.ai');
-      url.searchParams.set('utm_medium', 'site');
+    Object.keys(saved).forEach(function (k) { url.searchParams.set(k, saved[k]); });
+    if (!url.searchParams.has('utm_source')) {
+      url.searchParams.set('utm_source', 'creator');
+    }
+    if (!url.searchParams.has('utm_medium')) {
+      url.searchParams.set('utm_medium', location.pathname.indexOf('/free') === 0 ? 'free_tools' : 'site');
+    }
+    if (!url.searchParams.has('code') && !hasCreatorReferral()) {
+      url.searchParams.set('code', 'FOUNDER10');
     }
     return url;
   }
@@ -67,8 +72,13 @@
     for (var i = 0; i < links.length; i++) {
       var a = links[i];
       if (!isStart(a)) continue;
-      var url = new URL(SIGNUP);
-      url.searchParams.set('from', 'drppc');
+      var url;
+      try {
+        url = /^https:\/\/fullcircleorbit\.com\/signup/.test(a.href || '') ? new URL(a.href) : new URL(SIGNUP);
+      } catch (e) {
+        url = new URL(SIGNUP);
+      }
+      if (!url.searchParams.has('from')) url.searchParams.set('from', 'drppc');
       a.href = carry(url).toString();
     }
   }
