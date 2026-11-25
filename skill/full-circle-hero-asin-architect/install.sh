@@ -23,7 +23,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" 2>/dev/null && pwd || true
 echo ""
 echo -e "${GREEN}${BOLD}┌────────────────────────────────────────────────────────────────────┐${NC}"
 echo -e "${GREEN}${BOLD}│  FULL CIRCLE × ORBIT — Hero ASIN Campaign Architect Installer      │${NC}"
-echo -e "${GREEN}${BOLD}│  Full Circle 8-Segment Architecture + Perfect CPC + 3x Shield      │${NC}"
+echo -e "${GREEN}${BOLD}│  Per-Keyword Max CPC + Paused Bulk 2.0 Sheet + 3x Negation Shield  │${NC}"
 echo -e "${GREEN}${BOLD}└────────────────────────────────────────────────────────────────────┘${NC}"
 echo ""
 
@@ -47,7 +47,7 @@ if command -v python3 >/dev/null 2>&1; then
   PY_VER="$(python3 --version 2>&1)"
   echo -e "${GREEN}✓${NC} ${PY_VER} found"
   if python3 -c "import openpyxl" >/dev/null 2>&1; then
-    echo -e "${GREEN}✓${NC} openpyxl installed (ready for 6-tab .xlsx generation)"
+    echo -e "${GREEN}✓${NC} openpyxl installed (ready to build the 6-tab workbook)"
   else
     echo -e "${GOLD}→${NC} Installing ${BOLD}openpyxl${NC} for Excel workbook generation..."
     python3 -m pip install --user --quiet openpyxl 2>/dev/null || \
@@ -55,7 +55,7 @@ if command -v python3 >/dev/null 2>&1; then
       echo -e "${GOLD}!${NC} Could not auto-install openpyxl. Run: ${CYAN}pip3 install openpyxl${NC}"
   fi
 else
-  echo -e "${GOLD}!${NC} python3 not found. Install Python 3 to compile .xlsx bulk upload spreadsheets."
+  echo -e "${GOLD}!${NC} python3 not found. Install Python 3.9+ to build the blueprint, workbook and bulk sheet."
 fi
 
 # 4. Install skill files to ~/.claude/skills/full-circle-hero-asin-architect/
@@ -82,15 +82,25 @@ echo -e "${GREEN}✓${NC} Installed ${BOLD}build_campaign_sheet.py${NC}"
 echo ""
 echo -e "${GREEN}${BOLD}Installation complete!${NC}"
 echo ""
-echo -e "${BOLD}Next 2 steps to build your 1 Free Hero ASIN Architecture:${NC}"
-echo -e "  ${GOLD}1.${NC} Connect your Amazon account (read-only) to ${BOLD}Dr. PPC + Ava${NC} in Orbit:"
-echo -e "     ${CYAN}https://fullcircleorbit.com/signup?from=drppc&utm_source=creator&utm_campaign=hormozi_skill_funnel&code=FOUNDER10${NC}"
-echo -e "  ${GOLD}2.${NC} Launch Claude Code in any folder and run:"
+echo -e "${BOLD}Build your hero ASIN in 3 steps:${NC}"
+echo -e "  ${GOLD}1.${NC} Download 2 reports from Amazon:"
+echo -e "     ${DIM}Brand Analytics > Search Query Performance (your hero ASIN)${NC}"
+echo -e "     ${DIM}Amazon Ads > Sponsored Products > Search term report (last 30 days)${NC}"
+echo -e "  ${GOLD}2.${NC} Open Claude Code in the folder with those 2 files and run:"
 echo -e "     ${CYAN}claude \"/full-circle-hero-asin-architect\"${NC}"
+echo -e "  ${GOLD}3.${NC} Confirm your COGS, Amazon fees, Target ACoS and TACoS when Claude asks."
 echo ""
-echo -e "${DIM}Tip: Want to test the 6-tab Excel generator locally right now? Run:${NC}"
-echo -e "     ${CYAN}python3 \"${SKILL_DIR}/build_campaign_sheet.py\"${NC}"
+echo -e "${BOLD}You get 4 files:${NC} an interactive blueprint with a live calculator (.html), a 6-tab workbook"
+echo -e "with live formulas (.xlsx), a paused Amazon Bulk 2.0 sheet (.csv) and a Strategy Brief for Dr. PPC (.md)."
+echo ""
+echo -e "${DIM}No files yet? See the demo right now:${NC}"
+echo -e "     ${CYAN}python3 \"${SKILL_DIR}/build_campaign_sheet.py\" --sample${NC}"
+echo ""
+echo -e "${BOLD}Then pick a path:${NC}"
+echo -e "  ${DIM}A)${NC} Upload the Bulk 2.0 sheet yourself (everything arrives paused)."
+echo -e "  ${DIM}B)${NC} Paste the Strategy Brief into Dr. PPC and let it upload and manage the build daily:"
+echo -e "     ${CYAN}https://fullcircleorbit.com/signup?from=drppc&utm_source=creator&utm_campaign=hormozi_skill_funnel&code=FOUNDER10${NC}"
 echo ""
 echo -e "${DIM}By Full Circle (\$500M+ Managed Amazon Revenue) · Dr. PPC + Ava + Orbit${NC}"
-echo -e "${DIM}Daily autopilot: \$1 first 30 days, then \$299/mo + 2% of ad spend · Code FOUNDER10 = 10% off for life${NC}"
+echo -e "${DIM}Dr. PPC: \$1 first 30 days, then \$299/mo + 2% of ad spend · Code FOUNDER10 = 10% off for life${NC}"
 echo ""
