@@ -15,6 +15,8 @@
   window.__orbitFunnel = 1;
 
   var PIXEL = '1054966687594188';
+  var GOOGLE_ADS = 'AW-18390364141';
+  var BANNER_SRC = 'https://drppc-remarketing-engine.onrender.com/assets/site-banner.js';
   var SIGNUP = 'https://fullcircleorbit.com/signup';
   var KEY = 'drppc-landing-params';
   var KEEP = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
@@ -29,6 +31,33 @@
     window.fbq('init', PIXEL);
     window.fbq('track', 'PageView');
   }
+
+  // Site-wide Google Ads remarketing tag across drppc.ai (GPC-respecting, de-duped on /skill/hero-asin*).
+  if (!gpc && typeof window.gtag === 'function' && !window.__drppcGadsInit && !/^\/skill\/hero-asin/.test(location.pathname)) {
+    window.__drppcGadsInit = 1;
+    window.gtag('config', GOOGLE_ADS);
+  }
+
+  // Channel 6: personalized return-visitor bar for leads who opted in via the Hero ASIN funnel
+  // (or arrive with ?drppc_asin= from a nurture email). Skipped on the funnel opt-in/TY pages themselves.
+  (function maybeLoadReturnBanner() {
+    if (/^\/skill\/hero-asin(?:-call|-ty|-ty-call)?(?:\.html)?\/?$/.test(location.pathname)) return;
+    var hasState = false;
+    try {
+      var qp = new URLSearchParams(location.search);
+      if (qp.get('drppc_asin') || qp.get('asin')) hasState = true;
+    } catch (e) {}
+    try {
+      if (!hasState && localStorage.getItem('drppc_audit')) hasState = true;
+    } catch (e) {}
+    if (!hasState && /(?:^|;\s*)drppc_audit=/.test(document.cookie || '')) hasState = true;
+    if (!hasState || document.querySelector('script[data-drppc-banner]')) return;
+    var s = document.createElement('script');
+    s.src = BANNER_SRC;
+    s.defer = true;
+    s.setAttribute('data-drppc-banner', '1');
+    document.head.appendChild(s);
+  })();
 
   // Ad details from the landing URL; a new ad click replaces the old set (last click wins).
   var saved = {};
