@@ -16,7 +16,7 @@
  */
 (function () {
   'use strict';
-  var ENDPOINT = '';            // e.g. 'https://remarketing.drppc.ai'  (no trailing slash)
+  var ENDPOINT = 'https://drppc-remarketing-engine.onrender.com';
 
   var LEAD_KEY = 'fc_hormozi_lead';
   var AUDIT_KEY = 'drppc_audit';
@@ -85,6 +85,7 @@
       try { sessionStorage.setItem(LEAD_KEY, JSON.stringify(lead)); } catch (e) { /* storage blocked */ }
       fb('Lead', { content_name: lead.content_name || 'Hero ASIN Architect Skill', content_category: 'Claude Code PPC Skill' }, false, id);
       ga('generate_lead', { method: 'hero_asin_skill_form', funnel_variant: lead.funnel_variant || 'self_serve' });
+      ga('conversion', { send_to: 'AW-18390364141/BD-ECPmKt78dEO3fmsFE', value: 25.0, currency: 'USD', transaction_id: id });
       saveAudit();
       return post('/api/lead', forServer(lead, id));
     },
