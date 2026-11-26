@@ -330,9 +330,12 @@ gtag('js',new Date());gtag('config','G-M4G8GYYYXE');gtag('config','AW-1839036414
       page: location.pathname, submitted_at: new Date().toISOString()
     };
     /* pixel Lead, GA4, saved state and the remarketing engine: all in funnel.js */
-    if (window.FCFunnel) window.FCFunnel.lead(lead);
-    else { try { sessionStorage.setItem('fc_hormozi_lead', JSON.stringify(lead)); } catch (_) {} }
-    setTimeout(function(){ location.href = 'hero-asin-ty'; }, 250);
+    var moved = false;
+    function done(){ if (moved) return; moved = true; location.href = 'hero-asin-ty'; }
+    var req = window.FCFunnel ? window.FCFunnel.lead(lead) : null;
+    if (!req) { try { sessionStorage.setItem('fc_hormozi_lead', JSON.stringify(lead)); } catch (_) {} }
+    if (req && typeof req.then === 'function') { req.then(function(){ setTimeout(done, 120); }, done); setTimeout(done, 1200); }
+    else setTimeout(done, 250);
   });
 })();
 </script>
