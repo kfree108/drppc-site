@@ -36,13 +36,14 @@
   function storedLead() {
     try { return JSON.parse(sessionStorage.getItem(LEAD_KEY) || 'null'); } catch (e) { return null; }
   }
-  function post(route, payload) {
-    if (!base) return false;
+  function post(route, payload, onJson) {
+    if (!base) return Promise.resolve(null);
     try {
-      fetch(base + route, { method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true, body: JSON.stringify(payload) })
-        .catch(function () { /* never blocks the page */ });
-      return true;
-    } catch (e) { return false; }
+      return fetch(base + route, { method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true, body: JSON.stringify(payload) })
+        .then(function (r) { return r && r.ok ? r.json().catch(function () { return null; }) : null; })
+        .then(function (data) { if (data && onJson) { try { onJson(data); } catch (e) {} } return data; })
+        .catch(function () { return null; /* never blocks the page */ });
+    } catch (e) { return Promise.resolve(null); }
   }
   function ga(name, params) { try { if (window.gtag) window.gtag('event', name, params || {}); } catch (e) { /* blocked */ } }
   function fb(name, params, custom, eventId) {
@@ -52,7 +53,9 @@
     } catch (e) { /* blocked */ }
   }
   function saveAudit(extra) {
-    var state = { ready: true, asin: '', brand: '', estimatedBleed: '', promoCode: 'FOUNDER10', trialStarted: false, source: 'hero_asin_skill', savedAt: new Date().toISOString() };
+    var existing = {};
+    try { existing = JSON.parse(localStorage.getItem(AUDIT_KEY) || '{}') || {}; } catch (e) { existing = {}; }
+    var state = { ready: true, asin: existing.asin || '', brand: existing.brand || '', estimatedBleed: existing.estimatedBleed || '', promoCode: 'FOUNDER10', freeAuditCode: existing.freeAuditCode || '', trialStarted: false, source: 'hero_asin_skill', savedAt: new Date().toISOString() };
     for (var k in (extra || {})) state[k] = extra[k];
     var raw = JSON.stringify(state);
     try { localStorage.setItem(AUDIT_KEY, raw); } catch (e) { /* storage blocked */ }
@@ -87,7 +90,13 @@
       ga('generate_lead', { method: 'hero_asin_skill_form', funnel_variant: lead.funnel_variant || 'self_serve' });
       ga('conversion', { send_to: 'AW-18390364141/BD-ECPmKt78dEO3fmsFE', value: 25.0, currency: 'USD', transaction_id: id });
       saveAudit();
-      return post('/api/lead', forServer(lead, id));
+      return post('/api/lead', forServer(lead, id), function (data) {
+        if (data && data.freeAuditCode) {
+          lead.free_audit_code = data.freeAuditCode;
+          try { sessionStorage.setItem(LEAD_KEY, JSON.stringify(lead)); } catch (e) {}
+          saveAudit({ freeAuditCode: data.freeAuditCode });
+        }
+      });
     },
     /* Guide page: the visitor started the read-only connect (the audit step). Sent once per visit. */
     audit: function () {

@@ -373,10 +373,17 @@ gtag('js',new Date());gtag('config','G-M4G8GYYYXE');gtag('config','AW-1839036414
           <p>Connect read-only once and skip the exports. Dr. PPC &amp; Ava pull everything for you inside Orbit, in any browser.</p>
           <ol>
             <li>Create your Orbit account and connect Amazon <b>read-only</b>.</li>
-            <li>Dr. PPC &amp; Ava auto-pull your <b>#1 ASIN</b>, 90-day SQP, Search Term Report and <b>top-20 Competitor Scout</b> data.</li>
-            <li>No CSV exports. The same 6-tab workbook comes back, built live.</li>
+            <li>On the plan screen, click <b>&ldquo;Have a code?&rdquo;</b> at the bottom and paste your personal free-audit code (sent to your inbox &amp; shown below when unlocked, no card required).</li>
+            <li>Dr. PPC &amp; Ava auto-pull your <b>#1 ASIN</b>, 90-day SQP, Search Term Report and <b>top-20 Competitor Scout</b> data and build the same 6-tab workbook live.</li>
             <li>Nothing changes in your ad account unless you approve it.</li>
           </ol>
+          <div id="freeCodeBox" hidden style="margin:14px 0 16px;padding:12px 14px;border-radius:10px;background:#f0fdf4;border:1.5px dashed #0a7a55;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#075e41;">Your single-use free code (no card)</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px;flex-wrap:wrap;">
+              <code id="freeCodeVal" style="font-size:16px;font-weight:800;color:#131628;background:transparent;padding:0;letter-spacing:.04em;"></code>
+              <button type="button" id="copyFreeCode" style="border:1px solid #0a7a55;background:#fff;color:#075e41;font-weight:700;font-size:12px;padding:5px 11px;border-radius:999px;cursor:pointer;">Copy code</button>
+            </div>
+          </div>
           <a class="btn" data-signup href="https://fullcircleorbit.com/signup?from=drppc&amp;utm_source=creator&amp;utm_campaign=hormozi_skill_funnel&amp;code=FOUNDER10" target="_blank" rel="noopener">Connect read-only with Dr. PPC &amp; Ava →</a>
         </div>
       </div>
@@ -549,6 +556,35 @@ gtag('js',new Date());gtag('config','G-M4G8GYYYXE');gtag('config','AW-1839036414
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, legacy); else legacy();
   });
   document.getElementById('dlSample').addEventListener('click', function(){ fb('SampleWorkbookDownload', true); });
+  /* show the lead's personal single-use free-audit code in Track 2 when available */
+  var freeCode = (lead && lead.free_audit_code) || '';
+  if (!freeCode) {
+    try {
+      var st = JSON.parse(localStorage.getItem('drppc_audit') || 'null');
+      if (st && st.freeAuditCode) freeCode = st.freeAuditCode;
+    } catch (_) {}
+  }
+  if (freeCode && /^[A-Z0-9-]{8,40}$/i.test(freeCode)) {
+    var box = document.getElementById('freeCodeBox');
+    var val = document.getElementById('freeCodeVal');
+    var cbtn = document.getElementById('copyFreeCode');
+    if (box && val) {
+      val.textContent = freeCode;
+      box.hidden = false;
+      if (cbtn) {
+        cbtn.addEventListener('click', function(){
+          function copied(){ cbtn.textContent = 'Copied ✓'; setTimeout(function(){ cbtn.textContent = 'Copy code'; }, 1800); fb('FreeCodeCopied', true); }
+          if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(freeCode).then(copied, function(){});
+          else {
+            var ta = document.createElement('textarea'); ta.value = freeCode; ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); copied(); } catch (_) {}
+            document.body.removeChild(ta);
+          }
+        });
+      }
+    }
+  }
   /* the read-only connect is the audit step: tell the remarketing engine once */
   [].forEach.call(document.querySelectorAll('.track.t2 [data-signup]'), function(a){ a.addEventListener('click', function(){ if (window.FCFunnel) window.FCFunnel.audit(); }); });
 
